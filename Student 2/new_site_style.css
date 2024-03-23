@@ -240,3 +240,39 @@ nav .fa{
     }
 }
 
+/*---hospital intro---*/
+
+.hospital-intro{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.hospital-intro-row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hospital-intro-row-col{
+    flex-basis: 31%;
+    background: rgba(33, 159, 201, 0.173);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
