@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    background-color: palevioletred;
+    padding: 10px;
+}
+
+#intro {
+    padding: auto;
+    margin: auto;
+    border-style: solid;
+}
+
+#working {
+    padding: auto;
+    margin: auto;
+    background-color: palevioletred;
+}
+
+h2,h3 {
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-right: 450px;
+    margin-left: 450px;
+}
+
+a {
+    color: darkblue;
+    transition: color .7s ease;
+}
+
+a:hover {
+    color: aqua;
+}
