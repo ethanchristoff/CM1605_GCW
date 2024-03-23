@@ -212,15 +212,3 @@ function required() {
         alert("Value submitted")
     }
 }
-
-function clearPrompt(element) {
-    if (element.value == element.defaultValue) {
-        element.value = '';
-    }
-}
-
-function returnPrompt(element) {
-    if (element.value == '') {
-        element.value = element.defaultValue;
-    }
-}
