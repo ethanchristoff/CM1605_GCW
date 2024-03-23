@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="site_style.css">
+    <head>
+        <title>Health.com/form</title>
+    </head>
+    <nav>
+        <h1 class="logoheader">AI Based healthcare app</h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="home_page.html" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Catalogue">Catalogue</a>
+                    <a href="#Our Goal">Our Goal</a>
+                </div>
+            </li>
+            <li><a href="#News Page">News</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#About us">About</a></li>
+        </ul>
+    </nav>
+    <body>
+        <div class="home_pg_rectangle">
+            <h1>Fill in the form with your details</h1>
+            <form class="health_form" id="usr_dets_form" onsubmit="required()">
+                <fieldset>
+                    <legend>Fill in the details</legend>
+                    <table class="form_table">
+                        <tr>
+                            <td><label for="name">Name</label></td>
+                            <td><input type="text" id="name" name="name" value="Enter your name..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email</label></td>
+                            <td><input type="email" id="email" name="email" value="Enter your email here..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>                                
+                        </tr>
+                        <tr>
+                            <td><label for="age">Age</label></td>
+                            <td><input type="number" id="age" name="age"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contact">Contact Details:</label></td>
+                            <td><input type="tel" id="contact" name="contact" value="Enter your contact details here..." onfocus="clearPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><button type="submit" id="submit" name="submit" value="submit">Submit</button></td>
+                            <td><button type="reset" id="reset" name="reset" value="reset">Reset</button></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+        <script src="health_site.js"></script>
+    </body>
+    <footer>
+        <div class="footerRectangle">
+            <address class="address_bar">
+                &copy;Made By Ethan Perera<br>
+                IIT_ID : 20221812<br>
+                RGU_ID : 2331419<br>
+                Link to editors page: <a href='PageEditor_pg.html' target="_blank">Editor's page</a>
+            </address>
+        </div>
+    </footer>
+    <script src="health_site.js"></script>
+</html>
