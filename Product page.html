@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Class Example</title>
+    <link rel="stylesheet" href="Product page.css">
+    <nav> <!--Navigation bar has designed by Student 2 (Ethan)-->
+        <h1 class="logoheader">A Healthy Place</h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="#Home Page" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Catalogue">Catalogue</a>
+                    <a href="#Our Goal">Our Goal</a>
+                </div>
+            </li>
+            <li><a href="#News Page">News</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#About us">About</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="left">
+        <div class="top">
+            <h2 class="title">PRODUCTS</h2>
+            <div class="scroll-buttons">
+                <button class="scroll-btn left-btn"><</button>
+                <button class="scroll-btn right-btn">></button>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="item">
+                <img src="Oximeter.png" alt="product1" class="PImage" id="p1">
+                <h2 class="name">PRESSURE MONITOR</h2>
+                <div class="price">$200</div>
+                <div class="butns">
+                    <div class="qty">QTY</div>
+                    <input type="number" class="counter" value="1" min="1">
+                    <button class="addCart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="thermo.png" alt="product1" class="PImage" id="p2">
+                <h2 class="name">THERMOMETER</h2>
+                <div class="price">$100</div>
+                <div class="butns">
+                    <div class="qty">QTY</div>
+                    <input type="number" class="counter" value="1" min="1">
+                    <button class="addCart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="bandage.png" alt="product1" class="PImage" id="p3">
+                <h2 class="name">3M BANDAGE</h2>
+                <div class="price">$50</div>
+                <div class="butns">
+                    <div class="qty">QTY</div>
+                    <input type="number" class="counter" value="1" min="1">
+                    <button class="addCart">Add to Cart</button>
+                </div>
+            </div>
+            <div id="last" class="item">
+                <img src="omron- blood pressure monitor.png" alt="product1" class="PImage">
+                <h2 class="name">PRESSURE MONITOR</h2>
+                <div class="price">$200</div>
+                <div class="butns">
+                    <div class="qty">QTY</div>
+                    <input type="number" class="counter" value="1" min="1">
+                    <button class="addCart">Add to Cart</button>
+                </div>
+            </div>          
+        </div>
+        <div class="bottom">
+            <form class="personal-details">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Chirath Setunge">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="chirath.20230374@iit.ac.lk">
+                    <label for="tel">Tel No:</label>
+                    <input type="text" id="tel" name="tel" placeholder="071-123-4567">
+                    <label for="address">Address:</label>
+                    <textarea name="address" id="address" rows="3" cols="30" placeholder="No.123, ABCD Rd, XYZ"></textarea>
+                </fieldset>
+            </form>
+            <form class="card-details">
+                <fieldset>
+                    <legend>Card Details</legend>
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234-5678-9012-1234">
+                    <label for="expiry-month">Expiry month:</label>
+                    <input type="text" id="expiry-month" name="expiry-month" placeholder="12">
+                    <label for="expiry-year">Expiry year:</label>
+                    <input type="text" id="expiry-year" name="expiry-year" placeholder="2029">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                </fieldset>
+            </form>
+        </div>        
+    </div>
+    <div class="right">
+        <div class="RTop">
+            <h2 class="shopping-cart">Shopping Cart</h2>
+        </div>
+        <div class="RMiddle"></div>
+        <div class="discountBox">
+            <label for="points">Points:</label>
+            <input type="number" id="points" class="points-input" min="0" max="" value="0">
+            <p class="point-rule"> 1 point = 1% disocunt</p>
+        </div>
+        <div class="totalBox">
+            <div class="subtotal">Subtotal: $<span class="subtotal-amount">0.00</span></div>
+            <div class="discount-price">Discount: $<span class="discount-amount">0.00</span></div>
+            <div class="grand-total">Grand Total: $<span class="grand-total-amount">0.00</span></div>
+        </div>
+        <div class="RBottom">
+            <button class="clearOrder">Clear Order</button>
+            <button class="placeOrder" onclick="togglePopup()">Place Order</button>
+        </div>
+    </div>
+</div>
+<div class="popup" id="orderPopup">
+    <div class="popuptext" id="popupContent">
+        <h3>Order Details</h3>
+        <p id="popupMessage"></p>
+        <button id="okayButton">Okay</button>
+    </div>
+</div>
+
+<footer class="footer"> <!--Footer has designed by Student 4 (Chanul)-->
+    <div class="col-1">
+        <h3>Links</h3>
+        <a href="#">Gallery</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">About us</a>
+    </div>
+    <div class="col-2">
+        <h3>Newsletter</h3>
+        <form>
+            <input type="text" placeholder="Enter your email address here">
+            <br>
+            <button type="submit">Subscribe now</button>
+        </form>
+    </div>
+    <div class="col-3">
+        <h3>Contacts</h3>
+        <p>Address line blah blah<br> yada yada:........</p>
+    </div>
+</footer>
+<script src="Product page.js"></script>
+</body>
+</html>
