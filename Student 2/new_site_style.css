@@ -276,3 +276,71 @@ p{
     padding: 20px 12px;
     box-sizing: border-box;
 }
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px 0;
+}
+
+.hospital-intro-row-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+@media(max-width: 700px){
+    .hospital-intro-row{
+        flex-direction: column;
+    }
+}
+
+/*---Hospital locations---*/
+.hospital-locations{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.hospital-locations-row-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hospital-locations-row-col img{
+    width: 100%;
+}
+
+.cover-text{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+.cover-text:hover{
+    background: rgba(33, 159, 201, 0.7);
+}
+
+.cover-text h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+}
+
+.cover-text:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
