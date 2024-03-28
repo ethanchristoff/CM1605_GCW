@@ -200,7 +200,7 @@ function returnPrompt(element) {
     }
 }
 
-function required() {
+function quiz_required() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var age = document.getElementById("age").value;
@@ -210,5 +210,31 @@ function required() {
         alert("Please fill in all the required fields.");
     }else{
         alert("Value submitted")
+    }
+}
+
+function feedback_required(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var contact = document.getElementById("contact").value;
+
+    if (name.trim() == "" || email.trim() == "" || contact.trim() == ""){
+        alert("Please fill in all the required fields");
+    }else if (isNaN(age.trim()) || age.trim() == "") {
+        alert("Please enter a valid age.");
+    }
+    alert("Your name is: "+name+"\nYour email is:"+email+"\nYour age is:"+age+"\nYour contact details are:"+contact);
+}
+
+// Navbar sticky function
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("navbar").classList.add("sticky");
+    } else {
+        document.getElementById("navbar").classList.remove("sticky");
     }
 }
