@@ -389,6 +389,17 @@ font-weight: 300;
 margin-bottom: 15px; /* Adjust margin as needed */
 letter-spacing: 1px;
 }
+
+@media(max-width: 768px){
+  .footer{
+      flex-direction: column;
+  }
+
+  .footer div{
+      margin-bottom: 20px;
+  }
+}
+
 .col-1 a{
 text-decoration: none;
 display: block;

@@ -210,6 +210,16 @@ nav img{
     color: #fff;
   }
 
+  @media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer div{
+        margin-bottom: 20px;
+    }
+  }
+
 /*--------------------------------------------Segment for the logo animation--------------------------------------------*/
 
 @keyframes enlarge {
