@@ -192,8 +192,10 @@ function feedback_required(){
     var email = document.getElementById("email").value;
     var age = document.getElementById("age").value;
     var contact = document.getElementById("contact").value;
+    var feedback = document.getElementById("Feedback").value;
+    var rating = document.getElementById("rating").value;
 
-    if (name.trim() == "" || email.trim() == "" || contact.trim() == ""){
+    if (name.trim() == "" || email.trim() == "" || contact.trim() == "" || feedback.trim() == "" || rating == ""){
         alert("Please fill in all the required fields");
     }else if (isNaN(age.trim()) || age.trim() == "") {
         alert("Please enter a valid age.");
