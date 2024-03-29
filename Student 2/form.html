@@ -5,7 +5,7 @@
         <title>Health.com/form</title>
     </head>
     <nav>
-        <h1 class="logoheader">AI Based healthcare app</h1>
+        <h1 class="logoheader"><a href="home_page.html">A Healthy Place</a></h1>
         <ul>
             <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
             <li class="dropdown">
@@ -25,7 +25,7 @@
     <body>
         <div class="home_pg_rectangle">
             <h1>Fill in the form with your details</h1>
-            <form class="health_form" id="usr_dets_form" onsubmit="required()">
+            <form class="health_form" id="usr_dets_form" onsubmit="feedback_required()">
                 <fieldset>
                     <legend>Fill in the details</legend>
                     <table class="form_table">
@@ -43,7 +43,11 @@
                         </tr>
                         <tr>
                             <td><label for="contact">Contact Details:</label></td>
-                            <td><input type="tel" id="contact" name="contact" value="Enter your contact details here..." onfocus="clearPrompt(this)"></td>
+                            <td><input type="tel" id="contact" name="contact" value="Enter your contact details here..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Feedback">Your Feedback:</label></td>
+                            <td><input type="tel" id="Feedback" name="Feedback" value="Enter your feedback here... (optional)" class="large_text" onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
                         </tr>
                         <tr>
                             <td><button type="submit" id="submit" name="submit" value="submit">Submit</button></td>
@@ -53,7 +57,7 @@
                 </fieldset>
             </form>
         </div>
-        <script src="health_site.js"></script>
+        <script src="health_pg.js"></script>
     </body>
     <footer>
         <div class="footerRectangle">
