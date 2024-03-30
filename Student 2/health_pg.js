@@ -10,75 +10,48 @@ function showMenu(){
 
 const questions = [
     {
-        question: "This is a sample question (1)",
+        question: "What is the average body temperature of a healthy human?",
         answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
+            {text: "32°C", correct: false},
+            {text: "37°C", correct: true},
+            {text: "40°C", correct: false},
+            {text: "45°C", correct: false}
         ]
     },
     {
-        question: "This is a sample question (2)",
+        question: "Which vitamin is essential for good vision?",
         answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
+            {text: "Vitamin A", correct: true},
+            {text: "Vitamin C", correct: false},
+            {text: "Vitamin D", correct: false},
+            {text: "Vitamin K", correct: false}
         ]
     },
     {
-        question: "This is a sample question (3)",
+        question: "What is the main function of the red blood cells in the body?",
         answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
+            {text: "Fight infection", correct: false},
+            {text: "Produce insulin", correct: false},
+            {text: "Carry oxygen", correct: true},
+            {text: "Help with digestion", correct: false}
         ]
     },
     {
-        question: "This is a sample question (4)",
+        question: "What is the largest organ in the human body?",
         answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
+            {text: "Liver", correct: false},
+            {text: "Lungs", correct: false},
+            {text: "Heart", correct: false},
+            {text: "Skin", correct: true}
         ]
     },
     {
-        question: "This is a sample question (5)",
+        question: "What is the primary function of the kidneys?",
         answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
-        ]
-    },
-    {
-        question: "This is a sample question (6)",
-        answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
-        ]
-    },
-    {
-        question: "This is a sample question (7)",
-        answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
-        ]
-    },
-    {
-        question: "This is a sample question (8)",
-        answers: [
-            {text: "This is the correct answer", correct: true},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false},
-            {text: "This is the wrong answer", correct: false}
+            {text: "Regulate body temperature", correct: false},
+            {text: "Control blood pressure", correct: false},
+            {text: "Filter waste from the blood", correct: true},
+            {text: "Produce hormones", correct: false}
         ]
     }
 ];
@@ -141,10 +114,11 @@ function selans(e){
     const isCorrect=selBtn.dataset.correct==="true";
     if(isCorrect){
         selBtn.classList.add("correct");
-        score++;
+        score+=2;
     }
     else{
         selBtn.classList.add("incorrect");
+        score--;
     }
     Array.from(answerBtn.children).forEach(button => {
         if(button.dataset.correct==="true"){
@@ -160,7 +134,8 @@ function showScore(){
     if(score==0){
         questionElements.innerHTML = "You didn't score any points, try again next time";
     }else{
-        questionElements.innerHTML = 'Your score is: '+score+' out of: '+questions.length+', claim these points on the product page for a prize!';
+        questionElements.innerHTML = 'You have earned: '+score+' points out of: '+questions.length*2+', please claim the points in your next purchase!';
+        sessionStorage.setItem('score',score);
     }
     nextBtn.innerHTML="play again?";
     nextBtn.style.display="block";
@@ -200,7 +175,7 @@ function returnPrompt(element) {
     }
 }
 
-function required() {
+function quiz_required() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var age = document.getElementById("age").value;
@@ -210,5 +185,33 @@ function required() {
         alert("Please fill in all the required fields.");
     }else{
         alert("Value submitted")
+    }
+}
+
+function feedback_required(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var contact = document.getElementById("contact").value;
+    var feedback = document.getElementById("Feedback").value;
+    var rating = document.getElementById("rating").value;
+
+    if (name.trim() == "" || email.trim() == "" || contact.trim() == "" || feedback.trim() == "" || rating == ""){
+        alert("Please fill in all the required fields");
+    }else if (isNaN(age.trim()) || age.trim() == "") {
+        alert("Please enter a valid age.");
+    }
+    alert("Your name is: "+name+"\nYour email is:"+email+"\nYour age is:"+age+"\nYour contact details are:"+contact);
+}
+
+// Navbar sticky function
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("navbar").classList.add("sticky");
+    } else {
+        document.getElementById("navbar").classList.remove("sticky");
     }
 }

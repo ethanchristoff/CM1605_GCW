@@ -163,3 +163,15 @@ function generatePopupMessage() {
 
     return message;
 }
+
+function getScore(){
+    var score = sessionStorage.getItem('score');
+    if (score !== null) {
+        console.log('Score:', score);
+    }
+    return score;
+}
+
+var pointsInput = document.getElementById('points');
+
+pointsInput.setAttribute('max', getScore());
