@@ -353,39 +353,28 @@ nav a {
     text-decoration: none;
     color: inherit;
   }
-  
-nav a::before,
-nav a::after {
-    content: "";
-    position: absolute;
-    width: 110%;
-    height: 100%;
-    border-radius: 5px;
-    background-color: transparent;
-    transition: background-color .7s ease;
-  }
-  
-nav a::before {
-    top: 0;
-    left: 0;
-  }
+
   
 nav a::after {
-    bottom: 0;
-    right: 0;
-  }
-  
-nav a:hover::before,
-nav a:hover::after {
-    background-color: rgba(0, 0, 0, 0.1); 
-  }
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(33, 159, 201);
+  display: block;
+  margin: auto;
+  transition: .5s;
+} 
+
+nav a:hover::after{
+  width: 100%;
+}
 
 @keyframes enlarge {
     0% { transform: scale(1); }
     100% { transform: scale(1.1); }
-}
+}/*Keyframe modifer used here to enlarge obj with a .3s delay while having a size increment from 0% to 100%*/ 
 
-
+/*Meant for the logo*/
 .logo {
     position: absolute;
     top: 0;
@@ -397,7 +386,7 @@ nav a:hover::after {
 
 .logo:hover {
     transform: scale(1.5);
-    animation: enlarge 0.5s infinite alternate;
+    animation: enlarge 0.5s infinite alternate;/*The animation loop is made endless here*/
 }
 
 .logoheader {
