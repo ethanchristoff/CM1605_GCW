@@ -135,6 +135,7 @@ function showScore(){
         questionElements.innerHTML = "You didn't score any points, try again next time";
     }else{
         questionElements.innerHTML = 'You have earned: '+score+' points out of: '+questions.length*2+', please claim the points in your next purchase!';
+        sessionStorage.setItem('score',score);
     }
     nextBtn.innerHTML="play again?";
     nextBtn.style.display="block";

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="site_style.css">
+    <head>
+        <title>Health.com/form</title>
+    </head>
+    <nav>
+        <h1 class="logoheader"><a href="home_page.html">A Healthy Place</a></h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="home_page.html" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Our Goal">Our Goal</a>
+                </div>
+            </li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#About us">About</a></li>
+        </ul>
+    </nav>
+    <body>
+        <div class="home_pg_rectangle">
+            <h1>Fill in the form with your details</h1>
+            <form class="health_form" id="usr_dets_form" onsubmit="feedback_required()">
+                <fieldset>
+                    <legend>Fill in the details</legend>
+                    <table class="form_table">
+                        <tr>
+                            <td><label for="name">Name</label></td>
+                            <td><input type="text" id="name" name="name" value="Enter your name..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email</label></td>
+                            <td><input type="email" id="email" name="email" value="Enter your email here..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>                                
+                        </tr>
+                        <tr>
+                            <td><label for="age">Age</label></td>
+                            <td><input type="number" id="age" name="age"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contact">Contact Details:</label></td>
+                            <td><input type="tel" id="contact" name="contact" value="Enter your contact details here..." onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Feedback">Your Feedback:</label></td>
+                            <td><input type="tel" id="Feedback" name="Feedback" value="Enter your feedback here... (optional)" class="large_text" onfocus="clearPrompt(this)" onblur="returnPrompt(this)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Rating">Rating:</label></td>
+                            <td><input type="number" id="rating" name="rating"></td>
+                        </tr>
+                        <tr>
+                            <td><button type="submit" id="submit" name="submit" value="submit">Submit</button></td>
+                            <td><button type="reset" id="reset" name="reset" value="reset">Reset</button></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+        <script src="health_pg.js"></script>
+    </body>
+    <section>
+        <footer class="footer">
+            <div class="col-1">
+                <h3>Links</h3>
+                <a href="#">Gallery</a>
+                <a href="#">Products</a>
+                <a href="#">Services</a>
+                <a href="form.html">Rate us</a>
+            </div>
+            <div class="col-2">
+                <h3>Newsletter</h3>
+                <form class="footer_form">
+                    <input type="text" placeholder="Enter your email address here">
+                    <br>
+                    <button type="submit">Subscribe now</button>
+                </form>
+            </div>
+            <div class="col-3">
+                <h3>Contacts</h3>
+                <p>Address line blah blah<br> yada yada:........</p>
+            </div>
+        </footer>
+    </section>
+    <script src="health_pg.js"></script>
+</html>
