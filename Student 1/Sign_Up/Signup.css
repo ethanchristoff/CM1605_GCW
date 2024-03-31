@@ -9,6 +9,7 @@ form {
     background-color: rgba(221, 180, 180, 0.8); 
     padding: 40px;
     border-radius: 30px;
+    border: 4px solid ; 
 }
 
 .navbar {
@@ -285,8 +286,6 @@ nav a:hover::after {
     height: 100%; 
     margin: 1; 
     border-radius: 15px;
-    border: 4px solid lightblue;
-    background-color: lightblue; 
 }
 
 .footer {
