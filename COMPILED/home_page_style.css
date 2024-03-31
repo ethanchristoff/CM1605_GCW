@@ -99,6 +99,16 @@ nav img{
     transition: .5s;
 }
 
+.logoheader a{
+    color: #fff;
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+.logoheader a:hover{
+    text-decoration: underline;
+    border-bottom: 10px solid transparent;
+}
 /*--------------------------------------------Segment to keep the navbar fixed--------------------------------------------*/
 .navbar {
     position: fixed;
