@@ -9,6 +9,7 @@ form {
     background-color: rgba(221, 180, 180, 0.8); 
     padding: 40px;
     border-radius: 30px;
+    border: 4px solid ; 
 }
 
 .navbar {
@@ -285,22 +286,14 @@ nav a:hover::after {
     height: 100%; 
     margin: 1; 
     border-radius: 15px;
-    border: 4px solid lightblue;
-    background-color: lightblue; 
 }
 
 .footer {
-    margin-top: 30px;
-    background: lightblue;
+    padding: 30px; 
+    background: rgb(33, 159, 201);
     display: flex;
     justify-content: space-around; 
     align-items: center; 
-    background:lightblue;
-    border-radius: 15px;
-    padding: 10px;
-    width: calc(100vw - 65px);;
-    border: 4px solid lightblue;
-    margin: 10px auto;
 }
 
 .footer div {
@@ -338,9 +331,20 @@ form input {
     padding: 10px 30px;
     font-size: 15px;
     cursor: pointer;
+    transition: all .7s ease;
 }
 
 #footer_button:hover {
     background-color: #000;
     color: #fff;
+}
+
+@media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer div{
+        margin-bottom: 20px;
+    }
 }

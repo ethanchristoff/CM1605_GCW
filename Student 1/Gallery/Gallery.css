@@ -165,8 +165,6 @@ nav a:hover::after {
     height: 100%;
     margin: 1; 
     border-radius: 15px;
-    border: 4px solid lightblue;
-    background-color: lightblue;
 }
 
 h2 {
@@ -176,16 +174,11 @@ h2 {
 }
 
 .footer {
-    margin-top: 15px;
-    background: lightblue;
+    padding: 30px; 
+    background: rgb(33, 159, 201);
     display: flex;
-    justify-content: space-around; /* Adjust alignment as needed */
-    align-items: center; /* Adjust alignment as needed */
-    background:lightblue;
-    border-radius: 15px;
-    padding: 10px;
-    border: 4px solid lightblue;
-    margin: 1;
+    justify-content: space-around; 
+    align-items: center; 
 }
 
 .footer div {
@@ -230,6 +223,16 @@ form button:hover{
     color: #fff;
 }
 
+@media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer div{
+        margin-bottom: 20px;
+    }
+}
+
 *,*:after,*:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -248,7 +251,7 @@ img {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: lightblue;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -264,6 +267,28 @@ img {
 
 .info-text {
     width: 50%;
+}
+
+#thumb1,
+#thumb2,
+#thumb3,
+#thumb4,
+#thumb5{
+    border-radius: 8px;
+    background-color: #fff;
+    outline: 10px solid lightgreen;
+    outline-offset: -10px;
+    transition: 0.5s ease;
+}
+
+#thumb1:hover,
+#thumb2:hover,
+#thumb3:hover,
+#thumb4:hover,
+#thumb5:hover{
+    outline: 10px solid greenyellow;
+    outline-offset: -10px;
+    max-width: 860px;
 }
 
 .img_display {

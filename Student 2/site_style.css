@@ -310,12 +310,8 @@ address a:hover{
   color: darkblue;
 }
 
-.health_form input::placeholder{
-  color: grey !important;
-}
-
 .health_form input{
-  color: black;
+  color: grey;
 }
 
 
