@@ -177,10 +177,15 @@ nav img{
   margin-bottom: 15px; /* Adjust margin as needed */
   letter-spacing: 1px;
   }
+
   .col-1 a{
   text-decoration: none;
   display: block;
   margin-bottom: 10;
+  }
+
+  .col-3 p{
+    color: #000;
   }
   
   .footer_form input{

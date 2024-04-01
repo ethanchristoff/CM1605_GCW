@@ -99,16 +99,6 @@ nav img{
     transition: .5s;
 }
 
-.logoheader a{
-    color: #fff;
-    text-decoration: none;
-    transition: .5s ease;
-}
-
-.logoheader a:hover{
-    text-decoration: underline;
-    border-bottom: 10px solid transparent;
-}
 /*--------------------------------------------Segment to keep the navbar fixed--------------------------------------------*/
 .navbar {
     position: fixed;
@@ -187,10 +177,15 @@ nav img{
   margin-bottom: 15px; /* Adjust margin as needed */
   letter-spacing: 1px;
   }
+
   .col-1 a{
   text-decoration: none;
   display: block;
   margin-bottom: 10;
+  }
+
+  .col-3 p{
+    color: #000;
   }
   
   .footer_form input{

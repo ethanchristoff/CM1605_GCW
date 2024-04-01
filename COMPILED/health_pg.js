@@ -215,3 +215,130 @@ function scrollFunction() {
         document.getElementById("navbar").classList.remove("sticky");
     }
 }
+
+// Quiz Java script
+
+function quiz_submit(){
+
+    var q1 = document.getElementById("first_q");
+    var q2 = document.getElementById("second_q").value;
+    var q3 = document.getElementById("third_q").value;
+    var q4 = document.getElementById("fourth_q").value;
+    var q5 = document.getElementById("fifth_q").value;
+
+    let states = [false,false,false,false,false];
+
+    switch (q1.valueAsNumber){
+        case 37:
+            score+=2;
+            states[0]=true;
+            break;
+
+        case "":
+            break
+        
+        default:
+            score--;
+    }
+
+    switch (q2.trim().toLowerCase()){
+        case "vitamin a":
+            score+=2;
+            states[1]=true;
+            break;
+
+        case "":
+            break            
+
+        default:
+            score--;
+    }
+
+    switch (q3.trim().toLowerCase()){
+        case "carry oxygen":
+            score+=2;
+            states[2]=true;
+            break;
+
+        case "":
+            break
+
+        default:
+            score--;
+    }
+
+    switch (q4.trim().toLowerCase()){
+        case "skin":
+            score+=2;
+            states[3]=true;
+            break;
+
+        case "":
+            break
+
+        default:
+            score--;
+    }
+
+    switch (q5.trim().toLowerCase()){
+        case "filter waste from the blood":
+            score+=2;
+            states[4]=true;
+            break;
+
+        case "":
+            break
+
+        default:
+            score--;
+    }
+
+    sessionStorage.setItem('score',score);
+    
+    if (score<=0){
+        alert("You have scored: 0 points");
+    } else{
+        alert("You have scored: "+score);
+    }
+
+    let incorrect_string = "";
+
+    for (let i = 0; i <= states.length; i++) {
+        switch(i){
+            case 0:
+                if(states[0]!=true){
+                    incorrect_string+="\nYou got question 1 wrong!\n";
+                } 
+                break
+
+            case 1:
+                if(states[1]!=true){
+                    incorrect_string+="\nYou got question 2 wrong!\n";
+                } 
+                break
+
+            case 2:
+                if(states[2]!=true){
+                    incorrect_string+="\nYou got question 3 wrong!\n";
+                } 
+                break
+                
+            case 3:
+                if(states[3]!=true){
+                    incorrect_string+="\nYou got question 4 wrong!\n";
+                } 
+                break
+                
+            case 4:
+                if(states[4]!=true){
+                    incorrect_string+="\nYou got question 5 wrong!\n";
+                }
+                break
+        }      
+    }
+    if (incorrect_string===""){
+        alert("You got all the questions correct!")
+    } else{
+        alert(incorrect_string)
+    }
+}

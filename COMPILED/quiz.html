@@ -23,7 +23,7 @@
     </nav>  
     <body>
         <div class="rectangle">
-            <form class="usr_inp" onsubmit="quiz_required()">
+            <form class="usr_inp" onsubmit="quiz_details_required()">
                 <fieldset>
                     <legend>Required Information</legend>
                     <table>
@@ -47,18 +47,35 @@
                     <input class="submitbtn" type="submit" value="Submit">
                 </fieldset>
             </form>
-            <div class="quiz">
-                <h1>A quiz about your health</h1>
-                <div class="quizzQuestion">
-                    <h2 id="question_btns">Placeholder Question</h2>
-                    <div id="answer-btn">
-                        <button class="btn">Answer 1</button>
-                        <button class="btn">Answer 2</button>
-                        <button class="btn">Answer 3</button>
-                        <button class="btn">Answer 4</button>
-                    </div>
-                    <button id="nxtbtn">Next</button>
-                </div>
+            <div class="prompt-quiz">
+                <form onsubmit="quiz_submit()">
+                    <fieldset>
+                        <legend>A quiz about your health:</legend>
+                        <table>
+                            <tr>
+                                <td><label for="first_q">What is the average body temperature of a healthy human?</label></td>
+                                <td><input type="number" id="first_q" name="first_q"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="second_q">Which vitamin is essential for good vision?</label></td>
+                                <td><input type="text" id="second_q" name="second_q"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="third_q">What is the main function of the red blood cells in the body?</label></td>
+                                <td><input type="text" id="third_q" name="third_q"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="fourth_q">What is the largest organ in the human body?</label></td>
+                                <td><input type="text" id="fourth_q" name="fourth_q"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="fifth_q">What is the primary function of the kidneys?</label></td>
+                                <td><input type="text" id="fifth_q" name="fifth_q"></td>
+                            </tr>
+                        </table>
+                        <input class="submitbtn" type="submit" value="Submit">
+                    </fieldset>
+                </form>
             </div>
         </div>
     <script src="health_pg.js"></script>
@@ -81,7 +98,7 @@
         </div>
         <div class="col-3">
             <h3>Contacts</h3>
-            <p>Address line blah blah<br> yada yada:........</p>
+            <p> &copy; This page was made by Ethan Perera, <br> visit his <a href="Student_2.html">editors page</a> to know more</p>
         </div>
     </footer>
 </html>
