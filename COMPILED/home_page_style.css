@@ -6,7 +6,7 @@
 }
 
 
-/*Segment for the navigation bar*/
+/*---Segment for the navigation bar---*/
 
 .header{
     min-height: 100vh;
@@ -99,6 +99,17 @@ nav img{
     transition: .5s;
 }
 
+.logoheader a{
+    color: #000;
+    text-decoration: none; /* Remove default underline */
+    transition: .2s ease;   
+}
+
+.logoheader a:hover{
+    border-bottom: 5px solid #000; /* Black underline with a width of 2 pixels */
+    padding-bottom: 2px; /* Add space between text and underline */
+}
+
 /*--------------------------------------------Segment to keep the navbar fixed--------------------------------------------*/
 .navbar {
     position: fixed;
@@ -107,7 +118,7 @@ nav img{
     width: 100%;
     height: 10%;
     z-index: 1000; /* Ensures that the navbar is above other content */
-    background-color: rgba(211, 211, 211, 0.7);
+    background-color: rgba(170, 170, 170, 0.838);
     transition: top 0.3s; /* Add smooth transition */
 }
 
@@ -186,6 +197,11 @@ nav img{
 
   .col-3 p{
     color: #000;
+  }
+
+  .col-3 a{
+    color: lightblue;
+    text-decoration: underline;
   }
   
   .footer_form input{
@@ -388,38 +404,6 @@ h3{
     bottom: 49%;
     opacity: 1;
 }
-
-/* ---Segment for facilities--- */
-
-/* .facilities{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-}
-
-.facilities-col{
-    flex-basis: 31%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
-}
-
-.facilities-col img{
-    width: 500px;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.facilities-col p{
-    padding: 0;
-}
-
-.facilities-col h3{
-    margin-top: 16px;
-    margin-bottom: 15px;
-    text-align: left;
-} */
 
 /*----------Home page feedbacks----------*/
 
