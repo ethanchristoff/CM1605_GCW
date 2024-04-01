@@ -239,6 +239,7 @@ form button{
   padding: 10px 30px;
   font-size: 15px;
   cursor: pointer;
+  align-items: center;
 }
 form button:hover{
   background-color: #000;
