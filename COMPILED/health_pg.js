@@ -175,7 +175,7 @@ function returnPrompt(element) {
     }
 }
 
-function quiz_required() {
+function quiz_details_required() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var age = document.getElementById("age").value;
@@ -341,4 +341,9 @@ function quiz_submit(){
     } else{
         alert(incorrect_string)
     }
+}
+
+function setName(){
+    let name = document.getElementById("introduction-text").innerHTML;
+    
 }
