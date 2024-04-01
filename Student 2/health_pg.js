@@ -188,17 +188,8 @@ function quiz_required() {
 }
 
 function feedback_required(){
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var contact = document.getElementById("contact").value;
-
-    if (name.trim() == "" || email.trim() == "" || contact.trim() == ""){
-        alert("Please fill in all the required fields");
-    }else if (isNaN(age.trim()) || age.trim() == "") {
-        alert("Please enter a valid age.");
-    }
-    alert("Your name is: "+name+"\nYour email is:"+email+"\nYour age is:"+age+"\nYour contact details are:"+contact);
+    alert("The function is being called.");
+    event.preventDefault(); 
 }
 
 // Navbar sticky function
