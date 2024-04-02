@@ -1,7 +1,6 @@
 * {
     font-family:'Times New Roman', Times, serif;
 }
-
 nav ul {
     list-style-type: none;
     margin: 1;
@@ -53,6 +52,7 @@ nav a:hover::after {
 
 /*Meant for the logo*/
 .logo {
+    margin-top: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -69,20 +69,13 @@ nav a:hover::after {
 .logoheader {
     position: absolute;
     margin-left: 65px;
+    margin-top: auto;
     top: 6px;
     left: 1px;
     font-weight: bold;
     font-style: italic; 
 }
 
-.rectangle {
-    width: calc(100vw - 40px); /* 40px gap (20px on each side) */
-    height: calc(100vh - 40px); /* 40px gap (20px on top and bottom) */
-    margin: 1; /* Gap from each border */
-    border-radius: 15px;
-    border: 4px solid lightblue;
-    background-color: lightblue; /* This is for the rectangle color */
-  }
 
 .header{
     min-height: 100vh;
@@ -93,8 +86,16 @@ nav a:hover::after {
     position: relative;
 }
 
+.rectangle {
+  width: calc(100vw - 40px); /* 40px gap (20px on each side) */
+  height: calc(100vh - 40px); /* 40px gap (20px on top and bottom) */
+  margin: 1; /* Gap from each border */
+  border-radius: 15px;
+  border: 4px solid lightblue;
+  background-color: lightblue; /* This is for the rectangle color */
+}
 
-  body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -120,6 +121,11 @@ nav a:hover::after {
   background-position: center;
   background-size: cover;
   position: relative;
+}
+
+.color-change-container{
+  margin-top: auto;
+  top: 2;
 }
 
 h1 {
@@ -171,7 +177,7 @@ h1 {
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
 }
 
 .dropdown-content a::before,
@@ -192,6 +198,7 @@ h1 {
     align-items: center; /* Adjust alignment as needed */
     max-width: auto;
 }
+#color
 
 .footer div {
   text-align: center;
@@ -232,6 +239,7 @@ form button{
   padding: 10px 30px;
   font-size: 15px;
   cursor: pointer;
+  align-items: center;
 }
 form button:hover{
   background-color: #000;
