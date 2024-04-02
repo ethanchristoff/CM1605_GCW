@@ -175,19 +175,6 @@ function returnPrompt(element) {
     }
 }
 
-function quiz_details_required() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var contact = document.getElementById("contact").value;
-
-    if (name.trim() == "" || email.trim() == "" || age.trim() == "" || contact.trim() == "") {
-        alert("Please fill in all the required fields.");
-    }else{
-        alert("Value submitted")
-    }
-}
-
 function feedback_required(){
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -343,7 +330,27 @@ function quiz_submit(){
     }
 }
 
-function setName(){
-    let name = document.getElementById("introduction-text").innerHTML;
-    
+// Show the popup with user details
+function showPopup() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var contact = document.getElementById("contact").value;
+
+    if (name.trim() == "" || email.trim() == "" || age.trim() == "" || contact.trim() == ""){
+        var popupText = "Ensure that you fill all the fields"
+    }else {
+        var popupText = "Name: " + name + "<br>Email: " + email + "<br>Age: " + age + "<br>Contact: " + contact;
+    }
+    document.getElementById("popupText").innerHTML = popupText;
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
+
+// Close the popup
+function closePopup() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+
+    document.body.style.overflow = ""; // Enable scrolling
 }

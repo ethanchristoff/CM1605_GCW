@@ -23,7 +23,7 @@
     </nav>  
     <body>
         <div class="rectangle">
-            <form class="usr_inp" onsubmit="quiz_details_required()">
+            <form class="usr_inp" onsubmit="showPopup(); return false;">
                 <fieldset>
                     <legend>Required Information</legend>
                     <table>
@@ -47,6 +47,12 @@
                     <input class="submitbtn" type="submit" value="Submit">
                 </fieldset>
             </form>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <p id="popupText"></p>
+                </div>
+            </div>
             <div class="prompt-quiz">
                 <form onsubmit="quiz_submit()">
                     <fieldset>
@@ -74,6 +80,7 @@
                             </tr>
                         </table>
                         <input class="submitbtn" type="submit" value="Submit">
+                        <input class="submitbtn" type="reset" value="Reset">
                     </fieldset>
                 </form>
             </div>
