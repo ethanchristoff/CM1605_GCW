@@ -41,7 +41,7 @@ nav img{
 }
 
 .nav-links ul li a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 13px;
 }
@@ -171,7 +171,7 @@ nav img{
       transition: background-color .7s ease;
     }
 
-/*--------------------------------------------Segment for the footer--------------------------------------------*/
+/*--------------------------------------------Segment for the footer (Designed by Chanul / Student 4)--------------------------------------------*/
 
 .footer {
     padding: 30px; 
