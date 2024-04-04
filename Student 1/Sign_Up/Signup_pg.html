@@ -198,8 +198,13 @@
                 const password = document.getElementById('password').value.trim();
                 const confirm_password = document.getElementById('confirm_password').value.trim();
 
+                // Regular expression to match email format
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
                 if (!username || !email || !password || !confirm_password) {
                     alert('Please fill in all registration fields');
+                } else if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address');
                 } else if (password !== confirm_password){
                     alert('Both the passwords should be same!');
                 } else if (password.length < 8){
@@ -209,7 +214,7 @@
                     nextStep(1);
                 }
             }
-
+            
             function redirectToMainPage() {
         
                 window.location.href = "../../Student 2/home_page.html";
