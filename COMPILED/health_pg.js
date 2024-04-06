@@ -288,46 +288,47 @@ function quiz_submit(){
         alert("You have scored: "+score);
     }
 
-    let incorrect_string = "";
+    var incorrect_string = "";
 
     for (let i = 0; i <= states.length; i++) {
         switch(i){
             case 0:
                 if(states[0]!=true){
-                    incorrect_string+="\nYou got question 1 wrong!\n";
+                    incorrect_string+="You got question 1 wrong!<br>";
                 } 
                 break
 
             case 1:
                 if(states[1]!=true){
-                    incorrect_string+="\nYou got question 2 wrong!\n";
+                    incorrect_string+="You got question 2 wrong!<br>";
                 } 
                 break
 
             case 2:
                 if(states[2]!=true){
-                    incorrect_string+="\nYou got question 3 wrong!\n";
+                    incorrect_string+="You got question 3 wrong!<br>";
                 } 
                 break
                 
             case 3:
                 if(states[3]!=true){
-                    incorrect_string+="\nYou got question 4 wrong!\n";
+                    incorrect_string+="You got question 4 wrong!<br>";
                 } 
                 break
                 
             case 4:
                 if(states[4]!=true){
-                    incorrect_string+="\nYou got question 5 wrong!\n";
+                    incorrect_string+="You got question 5 wrong!<br>";
                 }
                 break
         }      
     }
-    if (incorrect_string===""){
-        alert("You got all the questions correct!")
-    } else{
-        alert(incorrect_string)
-    }
+    if (incorrect_string!="")
+        document.getElementById("popupText").innerHTML = incorrect_string;
+    else
+        document.getElementById("popupText").innerHTML = "you got all the questions right!"
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
 }
 
 // Show the popup with user details
