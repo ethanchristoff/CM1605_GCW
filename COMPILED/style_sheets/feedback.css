@@ -1,6 +1,9 @@
 * {
     font-family:'Times New Roman', Times, serif;
 }
+* {
+    font-family:'Times New Roman', Times, serif;
+}
 
 nav ul {
     list-style-type: none;
@@ -43,7 +46,7 @@ nav a:hover::after{
 /*Meant for the logo*/
 .logo {
     position: absolute;
-    top: 0;
+    top: -14px;
     left: 0;
     width: 40px; 
     height: 40px; 
@@ -58,22 +61,11 @@ nav a:hover::after{
 .logoheader {
     position: absolute;
     margin-left: 65px;
-    top: 6px;
+    top: -10px;
     left: 1px;
     font-weight: bold;
     font-style: italic; 
 }
-
-.rectangle {
-    width: calc(100vw - 40px); /* 40px gap (20px on each side) */
-    margin: 1; /* Sets a gap from each border */
-    border-radius: 15px;
-    background-color: #fff; 
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 10px;
-  }
 
   .container {
     max-width: 800px;
@@ -136,74 +128,6 @@ h1 {
 
 
 
-.quiz {
-    background: white;
-    width: 90%;
-    max-width: 800px;
-    margin: 10px auto 0;
-    border-radius: 15px;
-    padding: 30px;
-    position: relative;
-    outline: 10px solid lightblue;
-    outline-offset: -10px;
-    transition: .5s ease;
-  }
-
-.quiz:hover{
-  outline: 10px solid rgba(4,81,136);
-  outline-offset: -10px;
-  max-width: 1000px;
-}
-.quiz h1{
-  font-size: 35px;
-  color: black;
-  font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom:20px;
-}
-.quizQuestion {
-  padding: 20px 0;
-}
-
-.btn {
-  font-weight: 500;
-  width: 100%;
-  border: 1px solid #222;
-  padding: 10px;
-  margin: 10px 0;
-  text-align: left;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn:hover:not([disabled]) {
-  background: #222;
-  color: #fff;
-}
-
-.btn:disabled{
-  cursor: no-drop;
-}
-
-#nxtbtn {
-  background:black ;
-  color: #fff;
-  font-weight: 500;
-  width: 150px;
-  border: 0;
-  padding: 10px;
-  margin: 20px auto 0;
-  border-radius: 5px;
-  cursor: pointer; 
-  display: none; 
-  transition: all 0.3s;
-}
-
-#nxtbtn:hover {
-  background: lightblue;
-  color: #fff;
-}
 
 .footerRectangle {
   background: lightblue;
@@ -274,161 +198,6 @@ h1 {
     transition: background-color .7s ease;
   }
 
-.usr_inp {
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  display: inline-block;
-  width: 300px; /* Adjust the width of the form */
-  padding: 20px;
-  outline: 10px solid lightblue;
-  transition: .5s ease;
-}
-
-.usr_inp:hover{
-  outline: 10px solid rgba(4,81,136);
-  width: 400px;
-}
-
-.submitbtn {
-  background: black;
-  color: #fff;
-  font-weight: 500;
-  width: 150px;
-  padding: 10px;
-  margin: 20px auto 0;
-  border: 0;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s, color 0.3s;
-}
-
-.submitbtn:hover {
-  background: lightblue;
-}
-
-.correct {
-  background: #9aeabc;
-}
-
-.incorrect {
-  background: #ff9393;
-}
-
-.home_pg_rectangle {
-  background-size: cover;
-  background-position: center;
-  width: calc(100vw - 40px); /* 40px gap (20px on each side) */
-  margin: 1; /* Gap from each border */
-  border-radius: 15px;
-  border: 4px solid lightblue;
-  background-color: lightblue; /* Rectangle color */
-
-}
-
-.home_pg img{
-  height: 250px;
-  width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  transition: filter .3s;/* Transititons into the filter property with a .3s delay when hovered ove */
-}  
-
-.home_pg img:hover{
-  filter: drop-shadow(0 0 10px rgba(45, 111, 255, 0.5));/* Horizontal offset, vertical offset, blur radius, color */
-}
-
-.home_pg h3 {
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.5;
-  color: #333;
-  margin-top: 20px;
-}
-
-
-form{
-  margin: 10px;
-}
-form input{
-  cursor: pointer;
-}
-
-.address_bar{
-  background: grey;
-  border: 10px grey;
-  border-radius: 10px;
-}
-
-address a{
-  color: aqua;
-  transition: color .7s ease;
-}
-
-address a:hover{
-  color: darkblue;
-}
-
-.health_form input{
-  color: grey;
-}
-
-
-.health_form label{
-  font-weight: bold;
-}
-
-.health_form{
-  justify-content: center;
-}
-
-.health_form fieldset{
-  border-style: dotted;
-  border-color: black;
-  border-radius: 10px;
-}
-
-.form_table {
-  width: 100%;
-}
-
-.form_table tr {
-  margin-bottom: 10px;
-}
-
-.form_table td {
-  padding: 10px;
-}
-
-.form_table #submit, #reset{
-  background:black;
-  color: white;
-  border-radius: 5px;
-  transition: all .3s ease;
-}
-
-.form_table #submit:hover, #reset:hover{
-  background: rgb(75, 171, 245);
-  color: white;
-  border-radius: 5px;
-}
-
-.form_table input{
-  width: 350px;
-}
-
-.large_text{
-  height: 100px;
-}
-
-.home_pg_rectangle h1{
-  text-align: center;
-  border-style: dashed;
-  border-radius: 10px;
-}
-
 .footer {
   border-radius: 15px;
   margin-top: 30px;
@@ -490,30 +259,3 @@ margin-bottom: 10;
   color: #fff;
 }
 
-.main_pg {
-  width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("hospital_img.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-.home_pg_text{
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  color: #000000;   
-}
-
-.home_pg_text h1{
-  font-size: 70px;
-  margin-top: 80px;
-}
-
-.home_pg_text p{
-  margin: 20px auto;
-  font-weight: 100;
-  line-height: 25px;
-}

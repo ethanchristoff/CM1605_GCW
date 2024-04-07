@@ -1,7 +1,6 @@
 * {
     font-family:'Times New Roman', Times, serif;
 }
-
 nav ul {
     list-style-type: none;
     margin: 1;
@@ -10,7 +9,7 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: lightblue;
-    border: 15px solid lightblue;
+    border: 15px solid #add8e6;
     border-radius: 15px;
 }
 nav a {
@@ -43,7 +42,7 @@ nav a:hover::after{
 /*Meant for the logo*/
 .logo {
     position: absolute;
-    top: 0;
+    top: -14px;
     left: 0;
     width: 40px; 
     height: 40px; 
@@ -58,7 +57,7 @@ nav a:hover::after{
 .logoheader {
     position: absolute;
     margin-left: 65px;
-    top: 6px;
+    top: -10px;
     left: 1px;
     font-weight: bold;
     font-style: italic; 
@@ -75,7 +74,14 @@ nav a:hover::after{
     padding: 10px;
   }
 
-  .container {
+/* FEEDBACK CSS */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
@@ -124,93 +130,16 @@ h1 {
     margin: 5px 0;
 }
 
-.stars {
-  color: gold; /* Set the color of stars */
-  font-size: 20px; /* Adjust the size of stars */
-}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+/* FEEDBACK CSS */
 
-
-
-.quiz {
-    background: white;
-    width: 90%;
-    max-width: 800px;
-    margin: 10px auto 0;
-    border-radius: 15px;
-    padding: 30px;
-    position: relative;
-    outline: 10px solid lightblue;
-    outline-offset: -10px;
-    transition: .5s ease;
-  }
-
-.quiz:hover{
-  outline: 10px solid rgba(4,81,136);
-  outline-offset: -10px;
-  max-width: 1000px;
-}
-.quiz h1{
-  font-size: 35px;
-  color: black;
-  font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom:20px;
-}
-.quizQuestion {
-  padding: 20px 0;
-}
-
-.btn {
-  font-weight: 500;
-  width: 100%;
-  border: 1px solid #222;
-  padding: 10px;
-  margin: 10px 0;
-  text-align: left;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn:hover:not([disabled]) {
-  background: #222;
-  color: #fff;
-}
-
-.btn:disabled{
-  cursor: no-drop;
-}
-
-#nxtbtn {
-  background:black ;
-  color: #fff;
-  font-weight: 500;
-  width: 150px;
-  border: 0;
-  padding: 10px;
-  margin: 20px auto 0;
-  border-radius: 5px;
-  cursor: pointer; 
-  display: none; 
-  transition: all 0.3s;
-}
-
-#nxtbtn:hover {
-  background: lightblue;
-  color: #fff;
-}
 
 .footerRectangle {
-  background: lightblue;
+  background: rgb(33, 159, 201);
   border-radius: 15px;
   padding: 10px;
   width: calc(100vw - 65px);
-  border: 4px solid lightblue;
+  border: 4px solid rgb(33, 159, 201);
   margin: 10px auto;
   position: fixed; /* Position the footer at the bottom of the viewport */
   left: 0;
@@ -305,14 +234,6 @@ h1 {
 
 .submitbtn:hover {
   background: lightblue;
-}
-
-.correct {
-  background: #9aeabc;
-}
-
-.incorrect {
-  background: #ff9393;
 }
 
 .home_pg_rectangle {
@@ -410,7 +331,7 @@ address a:hover{
 }
 
 .form_table #submit:hover, #reset:hover{
-  background: rgb(75, 171, 245);
+  background: rgb(33, 159, 201);
   color: white;
   border-radius: 5px;
 }
@@ -457,10 +378,31 @@ letter-spacing: 1px;
   }
 }
 
-.col-1 a{
-text-decoration: none;
-display: block;
-margin-bottom: 10;
+.col-1 a {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px; 
+  color: #000;
+  /* Transition for the border-bottom property */
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent; /* Make border transparent initially */
+}
+
+.col-1 a:hover {
+  text-decoration: none; /* Ensure text-decoration is none */
+  border-bottom: 2px solid #000; /* Border becomes solid on hover */
+}
+
+.col-3 a{
+  color: black;
+  text-decoration: none;
+  transition: border-bottom .3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.col-3 a:hover{
+  text-decoration: none;
+  border-bottom: 2px solid #000;
 }
 
 .footer_form input{
@@ -516,4 +458,75 @@ margin-bottom: 10;
   margin: 20px auto;
   font-weight: 100;
   line-height: 25px;
+}
+
+/*---Prompt quiz section--*/
+
+.prompt-quiz {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  display: inline-block;
+  width: 900px; /* Adjust the width of the form */
+  padding: 30px;
+  outline: 10px solid lightblue;
+  transition: .5s ease;
+}
+
+.prompt-quiz:hover{
+  outline: 10px solid rgba(4,81,136);
+  width: 990px;
+}
+
+.prompt-quiz input{
+  width: 400px;
+  height: 30px;
+}
+
+.prompt-quiz legend{
+  font-size: 20px;
+}
+
+@media(max-width: 768px){
+  form{
+    font-size: 10px;
+  }
+}
+/*---Section for the popup box---*/
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(5px); /* Blur the background */
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgb(246, 240, 233);
+  margin: 15% auto;
+  padding: 20px;  
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 15px;
+  transition: .5s ease;
+}
+
+.modal-content:hover{
+  outline: 10px solid lightblue;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding: 10px;
 }
