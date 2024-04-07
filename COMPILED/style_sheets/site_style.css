@@ -1,5 +1,6 @@
 * {
     font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 nav ul {
@@ -344,6 +345,10 @@ letter-spacing: 1px;
 .col-3 a:hover{
   text-decoration: none;
   border-bottom: 2px solid #000;
+}
+
+.col-3 p{
+  font-weight: normal;
 }
 
 .footer_form input{
