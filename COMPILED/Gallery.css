@@ -1,7 +1,7 @@
-* {
-    font-family: Arial, sans-serif;
+*{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
 }
-
 .navbar {
     position: absolute;
     margin-right: 60px;

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+        <title>Gallery Page</title>
+        <link rel="stylesheet" type="text/css" href="Gallery.css">
+    </head>
+    <nav>
+        <h1 class="logoheader">A Healthy Place</h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="home_page.html" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="Gallery_pg.html">Gallery</a>
+                    <a href="Aboutus.html">About</a>
+                </div>
+            </li>
+            <li><a href="Product page.html">Products</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="Signup_pg.html">Sign in</a></li>
+        </ul>
+    </nav>
+    <body>
+        <div class="gallery_pg_rectangle">
+            <div class="gallery_pg">
+                    <h2>This is our Hospital's Gallery Page</h2>
+                    <div class="container">
+                        <div id="infoBox" class="info-box">
+                            <div class="thumbnail-info">
+                                <img id="largeThumbnail" src="" alt="Large Thumbnail">
+                                <div id="infoText" class="info-text">
+                                    <h2>Thumbnail Information</h2>
+                                    <p>This is the information related to the selected thumbnail.</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <ul class="img_display">
+                            <li><img id="thumb1" src="images/blood_pressure_instrument.jpg"></li>
+                            <li><img id="thumb2" src="images/diet_control.jpg"></li>
+                            <li><img id="thumb3" src="images/dumbbells_fitness.jpg"></li>
+                            <li><img id="thumb4" src="images/hospital_ward.jpg"></li>
+                            <li><img id="thumb5" src="images/medicine_sample.jpg"></li>
+                        </ul>
+                    </div>
+                    
+                    <script>
+                        var thumbs = [
+                            { id: "thumb1", src: "images/blood_pressure_instrument.jpg", info: "Blood pressure is a crucial indicator of cardiovascular health, reflecting the force exerted by blood against the walls of arteries as the heart pumps it throughout the body. Monitoring blood pressure is essential in preventing and managing various cardiovascular diseases. To measure blood pressure accurately, specialized instruments, commonly known as blood pressure monitors or sphygmomanometers, are employed. These instruments come in various types and employ different technologies to provide accurate readings. In this comprehensive overview, we will delve into the different types of blood pressure instruments, their components, working principles, and the importance of accurate blood pressure measurement in healthcare." },
+                            { id: "thumb2", src: "images/diet_control.jpg", info: "Diet control is a fundamental aspect of maintaining overall health and preventing various chronic conditions. It involves making conscious and informed choices about the foods we eat to ensure the body receives the necessary nutrients while managing calorie intake. A well-balanced and controlled diet is crucial for weight management, disease prevention, and promoting overall well-being. In this comprehensive guide, we will explore the principles of diet control, the importance of a balanced diet, and practical tips for incorporating healthy eating habits into daily life." },
+                            { id: "thumb3", src: "images/dumbbells_fitness.jpg", info: "Dumbbells, simple yet versatile pieces of fitness equipment, have been a staple in strength training for centuries. Their effectiveness lies in their ability to target various muscle groups, provide a range of resistance levels, and offer flexibility in workout routines. Dumbbells are accessible to fitness enthusiasts of all levels, from beginners to seasoned athletes, making them an integral part of home and gym workouts. In this comprehensive guide, we wll delve into the benefits of dumbbell fitness, different exercises, proper techniques, and how to design an effective dumbbell workout routine for overall strength and fitness." },
+                            { id: "thumb4", src: "images/hospital_ward.jpg", info: "A hospital ward serves as a crucial component in the healthcare system, providing a structured and specialized environment for the treatment and care of patients. Wards are designed to accommodate patients with similar medical conditions, allowing healthcare professionals to deliver targeted care and monitoring. In this comprehensive overview, we will explore the key aspects of hospital wards, including their types, features, roles of healthcare professionals, patient care processes, and the significance of creating a healing and supportive environment within the ward setting." },
+                            { id: "thumb5", src: "images/medicine_sample.jpg", info: "Medicine samples, often provided by healthcare professionals, pharmaceutical representatives, or clinics, serve as a temporary supply of medications for patients. These samples play a role in introducing patients to new medications, providing immediate relief while prescriptions are being filled, or allowing individuals to try a medication before committing to a full course. In this comprehensive guide, we will explore the purpose of medicine samples, their potential benefits and drawbacks, proper usage, and considerations for both healthcare providers and patients." }
+                        ];
+                    
+                        var infoBox = document.getElementById("infoBox");
+                        var largeThumbnail = document.getElementById("largeThumbnail");
+                        var infoText = document.getElementById("infoText");
+                    
+                        thumbs.forEach(function(thumb) {
+                            var thumbElement = document.getElementById(thumb.id);
+                            thumbElement.addEventListener("click", function() {
+                                largeThumbnail.src = thumb.src;
+                                infoText.innerHTML = "<h2>Thumbnail Information</h2><p>" + thumb.info + "</p>";
+                                infoBox.style.display = "block";
+                            });
+                        });
+                    </script>    
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function (){
+                $('.container.grid-col a').click(function(e){
+
+                    let href = e.target.parentElement.getAttribute('href');
+                    
+                    $('.tabcontent').each(function(index,element){
+                        if(`#${element.id}`!=href){
+                            $(element).removeClass('active');
+                        }
+                    })
+
+                    $('.container.blog-content span').click(function(){
+                        $(href).removeClass('active');
+                    })
+
+                    $(href).toggleClass('active');                  
+                    $('.tabcontent').css({
+                        height:"30rem"
+                    });
+
+                })
+            })
+        </script>
+
+    </body>
+    <footer class="footer">
+        <div class="col-1">
+            <h3>Links</h3>
+            <a href="Gallery_pg.html">Gallery</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About us</a>
+        </div>
+        <div class="col-2">
+            <h3>Newsletter</h3>
+            <form>
+                <input type="text" placeholder="Enter your email address here">
+                <br>
+                <button type="submit">Subscribe now</button>
+            </form>
+        </div>
+        <div class="col-3">
+            <h3>Contacts</h3>
+            <p>&copy; 2024 Healthy Place. All rights reserved.</p>
+            <p>This page was created by Student 1 in group C(1).</p>
+            <p>Mindiya De Zoysa.<a class="footer_link" href="../Page_Editor/PageEditor_pg.html" target="_blank">Click here</a> to visit to the page editor.</p>
+        </div>
+    </footer>
+</html>
