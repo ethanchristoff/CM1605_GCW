@@ -1,94 +1,91 @@
-const studentDetails = {
-    stu1: {
-        name: "Mindiya De Zoysa",
-        id: "S1",
-        role: "1",
-        email: "m.agampodi@rgu.ac.uk",
-        image: "style_sheets/images/Student_1.jpeg"
-    },
-    stu2: {
-        name: "Ethan Christoff Perera ",
-        id: "2331419",
-        role: "2",
-        email: "e.modarage@rgu.ac.uk",
-        image: "style_sheets/images/Student_2.jpeg"
-    },
-    stu3: {
-        name: "Chirath Shamika Setunge",
-        id: "2330910",
-        role: "3",
-        email: "c.setunge-mudalige-don@rgu.ac.uk",
-        image: "style_sheets/images/Student_3.jpeg"
-    },
-    stu4: {
-        name: "Chanul Vitharana",
-        id: "2330948",
-        role: "4",
-        email: "c.vitharana@rgu.ac.uk",
-        image: "style_sheets/images/Student_4.jpeg"
-    },
+document.addEventListener('DOMContentLoaded', function() {
+    const studentDetails = {
+        stu1: {
+            name: "Mindiya De Zoysa",
+            id: "S1",
+            role: "1",
+            email: "m.agampodi@rgu.ac.uk",
+            image: "style_sheets/images/Student_1.jpeg"
+        },
+        stu2: {
+            name: "Ethan Christoff Perera ",
+            id: "2331419",
+            role: "2",
+            email: "e.modarage@rgu.ac.uk",
+            image: "style_sheets/images/Student_2.jpeg"
+        },
+        stu3: {
+            name: "Chirath Shamika Setunge",
+            id: "2330910",
+            role: "3",
+            email: "c.setunge-mudalige-don@rgu.ac.uk",
+            image: "style_sheets/images/Student_3.jpeg"
+        },
+        stu4: {
+            name: "Chanul Vitharana",
+            id: "2330948",
+            role: "4",
+            email: "c.vitharana@rgu.ac.uk",
+            image: "style_sheets/images/Student_4.jpeg"
+        },
+    };
 
-    // Add details for other students similarly
-};
-
-// Function to update student details in the right container
-function updateStudentDetails(studentId) {
-    const details = studentDetails[studentId];
-    if (details) {
-        document.getElementById('student-image').src = details.image; // Set the correct image source
-        document.getElementById('student-name').textContent = details.name;
-        document.getElementById('student-id').textContent = `RGU ID: ${details.id}`;
-        document.getElementById('student-role').textContent = `Student: ${details.role}`;
-        document.getElementById('student-email').textContent = `email:${details.email}`;
-        document.querySelector('.right').classList.add('active');
+    // Function to update student details in the right container
+    function updateStudentDetails(studentId) {
+        const details = studentDetails[studentId];
+        if (details) {
+            document.getElementById('student-image').src = details.image; 
+            document.getElementById('student-name').textContent = details.name;
+            document.getElementById('student-id').textContent = `RGU ID: ${details.id}`;
+            document.getElementById('student-role').textContent = `Student: ${details.role}`;
+            document.getElementById('student-email').textContent = `email:${details.email}`;
+            document.querySelector('.right').classList.add('active');
+        }
     }
-}
 
-// Function to reset right container to default view
-function resetRightContainer() {
-    document.querySelector('.right').classList.remove('active');
+    // Function to reset right container to default view
+    function resetRightContainer() {
+        document.querySelector('.right').classList.remove('active');
         document.getElementById('student-image').src = "style_sheets/images/AboutUs.png"; 
         document.getElementById('student-name').textContent = "";
         document.getElementById('student-id').textContent = "";
         document.getElementById('student-role').textContent = "";
         document.getElementById('student-email').textContent ="";
-}
+    }
 
-// Attach event listeners to each student element
-const students = document.querySelectorAll('.student');
-students.forEach(student => {
-    student.addEventListener('mouseenter', function() {
-        const studentId = this.getAttribute('data-id');
-        updateStudentDetails(studentId);
+    // Attach event listeners to each student element
+    const students = document.querySelectorAll('.student');
+    students.forEach(student => {
+        student.addEventListener('mouseenter', function() {
+            const studentId = this.getAttribute('data-id');
+            updateStudentDetails(studentId);
+        });
+        student.addEventListener('mouseleave', function() {
+            resetRightContainer();
+        });
     });
-    student.addEventListener('mouseleave', function() {
-        resetRightContainer();
-    });
-});
-// Get references to the plus and minus buttons
-const increaseBtn = document.querySelector('.zoom-btn.increase');
-const decreaseBtn = document.querySelector('.zoom-btn.decrease');
 
-// Get the container element where you want to change the font size
-const aboutUsContainer = document.querySelector('.aboutUsContainer');
+    // Zoom-in and zoom-out functionality
+    const increaseBtn = document.querySelector('.zoom-btn.increase');
+    const decreaseBtn = document.querySelector('.zoom-btn.decrease');
+    const aboutUsContainer = document.querySelector('.aboutUsContainer');
+    let currentFontSize = 16; // Default font size
 
-// Define initial font size
-let currentFontSize = 16; // Default font size
-
-// Function to increase font size
-function increaseFontSize() {
-    currentFontSize += 5;
-    aboutUsContainer.style.fontSize = currentFontSize + 'px';
-}
-
-// Function to decrease font size
-function decreaseFontSize() {
-    if (currentFontSize > 5) { // Ensure font size doesn't go below 5px
-        currentFontSize -= 5;
+    // Function to increase font size
+    function increaseFontSize() {
+        currentFontSize += 5;
         aboutUsContainer.style.fontSize = currentFontSize + 'px';
     }
-}
 
-// Attach event listeners to the plus and minus buttons
-increaseBtn.addEventListener('click', increaseFontSize);
-decreaseBtn.addEventListener('click', decreaseFontSize);
+    // Function to decrease font size
+    function decreaseFontSize() {
+        if (currentFontSize > 5) { // Ensure font size doesn't go below 5px
+            currentFontSize -= 5;
+            aboutUsContainer.style.fontSize = currentFontSize + 'px';
+        }
+    }
+
+    // Attached event listeners to the plus and minus buttons
+    increaseBtn.addEventListener('click', increaseFontSize);
+    decreaseBtn.addEventListener('click', decreaseFontSize);
+});

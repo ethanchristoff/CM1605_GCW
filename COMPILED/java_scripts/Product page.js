@@ -1,14 +1,17 @@
+// Event listener to ensure DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.addCart');
-
+    // Event listener for 'Add to Cart' buttons
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
+            // Clone selected item to create a cart item
             const item = this.closest('.item');
             const cartItem = item.cloneNode(true);
             const quantityInput = cartItem.querySelector('.counter');
             const minusButton = document.createElement('button');
             minusButton.textContent = '-';
             minusButton.classList.add('minus');
+            // Event listener for minus button to adjust quantity or remove item from cart
             minusButton.addEventListener('click', function() {
                 if (parseInt(quantityInput.value) >= 1) {
                     quantityInput.value = parseInt(quantityInput.value) - 1;
@@ -25,15 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Replace the "Add to Cart" button with minus button and quantity input
             cartItem.querySelector('.butns').replaceWith(minusButton, quantityInput);
-
+            // Append the cart item to the cart container
             const cartItemsContainer = document.querySelector('.RMiddle');
             cartItemsContainer.appendChild(cartItem);
         });
     });
 });
+// Function to calculate subtotal, discount amount, and grand total
 document.addEventListener('DOMContentLoaded', function() {
     // Function to calculate subtotal, discount amount, and grand total
     function calculateTotal() {
+        // Initialize subtotal
         let subtotal = 0;
         const cartItems = document.querySelectorAll('.cart-item');
         
@@ -104,12 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateTotal();
     });
 });
+// Event listener to handle placing an order
 document.addEventListener('DOMContentLoaded', function() {
+    // Event listener to handle placing an order
     const placeOrderButton = document.querySelector('.placeOrder');
     const popup = document.getElementById('orderPopup');
     const mainContent = document.querySelector('.main-container');
     
     placeOrderButton.addEventListener('click', function() {
+        // Get user inputs
         const nameInput = document.getElementById('name').value;
         const emailInput = document.getElementById('email').value;
         const telInput = document.getElementById('tel').value;
@@ -118,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const expiryMonthInput = document.getElementById('expiry-month').value;
         const expiryYearInput = document.getElementById('expiry-year').value;
         const cvvInput = document.getElementById('cvv').value;
-
+        // Regular expressions for input validation
         const yearRegex = /^\d{4}$/; // Matches 4 digitts only
         const monthRegex = /^(0[1-9]|1[0-2])$/; // Matches two digits between 01 and 12
         const telRegex = /^\d{10}$/; // Matches 10 digits only
@@ -157,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         location.reload();
     });
 });
-
+// Function to generate message for the order popup
 function generatePopupMessage(name, address) {
     let message = `Dear ${name},<br><br>You have ordered:<br>`;
 
@@ -202,6 +210,7 @@ var score = sessionStorage.getItem('score');
         var pointsInput = document.getElementById('points');
         pointsInput.setAttribute('max', score);
     }
+// Event listener for scrolling items left and right
 document.addEventListener('DOMContentLoaded', function() {
     const leftButton = document.querySelector('.left-btn');
     const rightButton = document.querySelector('.right-btn');
