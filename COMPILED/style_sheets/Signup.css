@@ -1,5 +1,6 @@
-* {
-    font-family: Arial, sans-serif;
+*{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .registration, 
@@ -75,7 +76,8 @@ select {
     cursor: pointer;
     transform: translateY(-50%);
     position: absolute;
-    right: 160px;
+    right: 270px;
+    display: fixed;
 }
 
 .input-with-unit {
