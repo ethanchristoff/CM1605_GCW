@@ -1,3 +1,4 @@
+// Made by Ethan Perera (Student 2)
 var navLinks = document.getElementById("navLinks");
 
 function hideMenu(){
