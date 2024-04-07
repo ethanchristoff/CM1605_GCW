@@ -1,5 +1,6 @@
-* {
-    font-family: Arial, sans-serif;
+*{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .registration, 
@@ -75,7 +76,8 @@ select {
     cursor: pointer;
     transform: translateY(-50%);
     position: absolute;
-    right: 160px;
+    right: 270px;
+    display: fixed;
 }
 
 .input-with-unit {
@@ -299,23 +301,86 @@ nav a:hover::after {
     display: flex;
     justify-content: space-around; 
     align-items: center; 
-}
-
-.footer div {
+  }
+  .footer div {
     text-align: center;
-}
-
-.footer div h3 {
+  }
+    .footer div h3 {
     font-weight: 300;
-    margin-bottom: 15px; 
+    margin-bottom: 15px; /* Adjust margin as needed */
     letter-spacing: 1px;
-}
+  }
 
-.col-1 a {
+  .col-1 a {
     text-decoration: none;
     display: block;
-    margin-bottom: 10;
-}
+    margin-bottom: 10px; 
+    color: #000;
+    /* Transition for the border-bottom property */
+    transition: border-bottom 0.3s ease-in-out;
+    border-bottom: 2px solid transparent; /* Make border transparent initially */
+  }
+  
+  .col-1 a:hover {
+    text-decoration: none; /* Ensure text-decoration is none */
+    border-bottom: 2px solid #000; /* Border becomes solid on hover */
+  }
+  
+
+  .col-3 p{
+    font-weight: normal;
+    color: #000;
+  }
+
+  .col-3 a{
+    color: black;
+    text-decoration: none;
+    transition: border-bottom .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .col-3 a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+  }
+  
+  
+  .footer_form input{
+    width: 400px;
+    height: 45px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top:1px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+  }
+  
+  .footer_form button{
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .7s ease;
+  }
+  
+  .footer_form button:hover{
+    background-color: #000;
+    color: #fff;
+  }
+
+  @media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer div{
+        margin-bottom: 20px;
+    }
+  }
 
 form input {
     width: 400px;

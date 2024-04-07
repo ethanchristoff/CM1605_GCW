@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="AboutUs.css">
+    <title>A Healthy Place/About Us</title>
+    <link rel="stylesheet" href="style_sheets/AboutUs.css">
     <nav>
         <h1 class="logoheader"><a href="home_page.html">A Healthy Place</a></h1>
         <ul>
-            <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
+            <li><img alt="Health.com_logo" src="style_sheets/images/Health_Logo.png" alt="logo" class="logo"></li>
             <li class="dropdown">
                 <a href="home_page.html" class="dropbtn">Home</a>
                 <div class="dropdown-content">
@@ -17,7 +17,6 @@
                 </div>
             </li>
             <li><a href="Product page.html">Products</a></li>
-            <li><a href="#Contact Details">Contact</a></li>
             <li><a href="quiz.html">Quiz</a></li>
             <li><a href="Signup_pg.html">Sign in</a></li>
         </ul>
@@ -35,26 +34,26 @@
             </div>
             <div class="aboutUsContainer">
                 <div class="student" data-id="stu1">
-                    <img src="images/face.png" alt="stu1" >
+                    <img src="style_sheets/images/face.png" alt="stu1" >
                     <h2>Student 1</h2>
                 </div>
                 <div class="student" data-id="stu2">
-                    <img src="images/face.png" alt="stu2">
+                    <img src="style_sheets/images/face.png" alt="stu2">
                     <h2>Student 2</h2>
                 </div>
                 <div class="student" data-id="stu3">
-                    <img src="images/face.png" alt="stu3">
+                    <img src="style_sheets/images/face.png" alt="stu3">
                     <h2>Student 3</h2>
                 </div>
                 <div class="student" data-id="stu4">
-                    <img src="images/face.png" alt="stu4">
+                    <img src="style_sheets/images/face.png" alt="stu4">
                     <h2>Student 4</h2>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="student-details">
-                <img src="images/AboutUs.png" alt="Student Image" id="student-image">
+                <img src="style_sheets/images/AboutUs.png" alt="Student Image" id="student-image">
                 <h2 id="student-name">About Us</h2>
                 <p id="student-id"></p>
                 <p id="student-role"></p>
@@ -62,28 +61,30 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
+    <footer class="footer"> <!--Footer has designed by Student 4 (Chanul)-->
         <div class="col-1">
             <h3>Links</h3>
-            <a href="#">Gallery</a>
-            <a href="#">Products</a>
-            <a href="#">Services</a>
-            <a href="#">About us</a>
+            <a href="Gallery_pg.html">Gallery</a>
+            <a href="form.html">Rate Us</a>
+            <a href="Product page.html">Products</a>
+            <a href="Aboutus.html">About us</a>
         </div>
         <div class="col-2">
             <h3>Newsletter</h3>
-            <form>
-                <input type="text" placeholder="Enter your email address here">
+            <form class="footer_form" id="newsletterForm">
+                <input type="text" aria-label="newsletter-name" placeholder="Enter your name here" name="name" id="name">
+                <br>
+                <input type="text" aria-label="newsletter-email" placeholder="Enter your email address here" name="email" id="email">
                 <br>
                 <button type="submit">Subscribe now</button>
-            </form>
+            </form>            
         </div>
         <div class="col-3">
             <h3>Contacts</h3>
-            <p> &copy; This page was made by Chirath Setunge, <br> visit his <a href="Student_2.html" target="_blank">editors page</a> to know more</p>
+            <p>&copy; This page was made by Chirath Setunge, <br> visit his <a href="Student_2.html" target="_blank">editors page</a> to know more</p>
         </div>
     </footer>
-<script src="AboutUs.js"></script>
+<script src="java_scripts/AboutUs.js"></script>
 </body>
 </html>
 
