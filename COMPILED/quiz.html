@@ -12,13 +12,13 @@
                 <a href="home_page.html" class="dropbtn">Home</a>
                 <div class="dropdown-content">
                     <a href="#Gallery">Gallery</a>
-                    <a href="#Our Goal">Our Goal</a>
+                    <a href="Aboutus.html">About us</a>
                 </div>
             </li>
             <li><a href="Product page.html">Products</a></li>
             <li><a href="#Contact Details">Contact</a></li>
             <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="#About us">About</a></li>
+            <li><a href="#Sign in">Sign in</a></li>
         </ul>
     </nav>  
     <body>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="prompt-quiz">
-                <form onsubmit="quiz_submit()">
+                <form onsubmit="quiz_submit(); return false">
                     <fieldset>
                         <legend>A quiz about your health:</legend>
                         <table>
@@ -83,6 +83,12 @@
                         <input class="submitbtn" type="reset" value="Reset">
                     </fieldset>
                 </form>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closePopup()">&times;</span>
+                        <p id="popupText"></p>
+                    </div>
+                </div>
             </div>
         </div>
     <script src="health_pg.js"></script>

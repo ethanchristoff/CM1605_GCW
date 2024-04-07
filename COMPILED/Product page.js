@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Calculate subtotal by summing up the prices of all items in the cart
         cartItems.forEach(item => {
-            const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+            const price = parseFloat(item.querySelector('.price').textContent.replace('￡', ''));
             const quantity = parseInt(item.querySelector('.counter').value);
             subtotal += price * quantity;
         });
@@ -107,26 +107,44 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const placeOrderButton = document.querySelector('.placeOrder');
     const popup = document.getElementById('orderPopup');
+    const mainContent = document.querySelector('.main-container');
     
     placeOrderButton.addEventListener('click', function() {
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const telInput = document.getElementById('tel');
-        const addressInput = document.getElementById('address');
-        const cardNumberInput = document.getElementById('card-number');
-        const expiryMonthInput = document.getElementById('expiry-month');
-        const expiryYearInput = document.getElementById('expiry-year');
-        const cvvInput = document.getElementById('cvv');
+        const nameInput = document.getElementById('name').value;
+        const emailInput = document.getElementById('email').value;
+        const telInput = document.getElementById('tel').value;
+        const addressInput = document.getElementById('address').value;
+        const cardNumberInput = document.getElementById('card-number').value;
+        const expiryMonthInput = document.getElementById('expiry-month').value;
+        const expiryYearInput = document.getElementById('expiry-year').value;
+        const cvvInput = document.getElementById('cvv').value;
 
-        // Check if all required fields are filled
-        if (!nameInput.value || !emailInput.value || !telInput.value || !addressInput.value || !cardNumberInput.value || !expiryMonthInput.value || !expiryYearInput.value || !cvvInput.value) {
+        const yearRegex = /^\d{4}$/; // Matches 4 digitts only
+        const monthRegex = /^(0[1-9]|1[0-2])$/; // Matches two digits between 01 and 12
+        const telRegex = /^\d{10}$/; // Matches 10 digits only
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Matches basic email format
+
+        // Check if all required fields are filled and meet validation criteria
+        if (!nameInput || !emailInput || !telInput || !addressInput || !cardNumberInput || !expiryMonthInput || !expiryYearInput || !cvvInput) {
             // If any required field is empty, display a prompt box
             alert('Please fill out all required fields.');
+        } else if (!telRegex.test(telInput)) {
+            // If telephone number format is incorrect, display an alert
+            alert('Please enter a valid telephone number.');
+        } else if (!emailRegex.test(emailInput)) {
+            // If email format is incorrect, display an alert
+            alert('Please enter a valid email address.');
+        } else if (!yearRegex.test(expiryYearInput)) {
+            // If year format is incorrect, display an alert
+            alert('Please enter a valid year format.');
+        } else if (!monthRegex.test(expiryMonthInput)) {
+            // If month format is incorrect, display an alert
+            alert('Please enter a valid month.');
         } else {
             // All required fields are filled, proceed with displaying the popup
-            const message = generatePopupMessage();
-            const grandTotal = document.querySelector('.grand-total-amount').textContent;
-            document.getElementById('popupMessage').textContent = message + `\n\nYour grand total is £${grandTotal}`;
+            mainContent.classList.add('blur');
+            const message = generatePopupMessage(nameInput, addressInput);
+            document.getElementById('popupMessage').innerHTML = message;
             popup.classList.add('show');
         }
     });
@@ -134,32 +152,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close the popup when the user clicks the okay button
     const okayButton = document.getElementById('okayButton');
     okayButton.addEventListener('click', function() {
+        mainContent.classList.remove('blur');
         popup.classList.remove('show');
+        location.reload();
     });
 });
-function generatePopupMessage() {
-    let message = "Dear Anna,\nYou have ordered:\n";
+
+function generatePopupMessage(name, address) {
+    let message = `Dear ${name},<br><br>You have ordered:<br>`;
 
     // Iterate over each item in the cart
     const cartItems = document.querySelectorAll('.cart-item');
     cartItems.forEach(item => {
         const itemName = item.querySelector('.name').textContent;
         const quantity = parseInt(item.querySelector('.counter').value);
-        const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+        const price = parseFloat(item.querySelector('.price').textContent.replace('￡', ''));
         const itemCost = quantity * price;
-        message += `${quantity} ${itemName} at a cost of £${itemCost.toFixed(2)}\n`;
+        message += `${quantity}x   ${itemName} at a cost of £${itemCost.toFixed(2)}<br>`;
     });
 
     // Calculate total bill
     let totalBill = 0;
     cartItems.forEach(item => {
-        const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+        const price = parseFloat(item.querySelector('.price').textContent.replace('￡', ''));
         const quantity = parseInt(item.querySelector('.counter').value);
         totalBill += price * quantity;
     });
 
     // Add total bill to the message
-    message += `Your total bill is £${totalBill.toFixed(2)}.`;
+    message += `<br>Your Subtotal bill is £${totalBill.toFixed(2)}.<br>`;
+
+    const grandTotal = document.querySelector('.grand-total-amount').textContent;
+
+    message += `Your Grand Total is £${grandTotal}<br>`;
+
+    // Add address to the message
+    message += `<br>Your order will be delivered to: ${address}`;
 
     return message;
 }
@@ -174,3 +202,19 @@ var score = sessionStorage.getItem('score');
         var pointsInput = document.getElementById('points');
         pointsInput.setAttribute('max', score);
     }
+document.addEventListener('DOMContentLoaded', function() {
+    const leftButton = document.querySelector('.left-btn');
+    const rightButton = document.querySelector('.right-btn');
+    const middleContainer = document.querySelector('.middle');
+
+    // Function to scroll items to the left
+    leftButton.addEventListener('click', function() {
+        middleContainer.scrollLeft -= 300; // Adjust the scroll distance as needed
+    });
+
+    // Function to scroll items to the right
+    rightButton.addEventListener('click', function() {
+        middleContainer.scrollLeft += 300; // Adjust the scroll distance as needed
+    });
+});
+    

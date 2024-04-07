@@ -140,7 +140,7 @@ function showScore(){
     nextBtn.innerHTML="play again?";
     nextBtn.style.display="block";
 }
-
+    
 function handleNxtBtn(){
     currentQidx++;
     if(currentQidx<questions.length){
@@ -172,6 +172,19 @@ function clearPrompt(element) {
 function returnPrompt(element) {
     if (element.value == "") { 
         element.value = temp_element;// The text value taken in from the html input is then referred to again here
+    }
+}
+
+function quiz_details_required() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var contact = document.getElementById("contact").value;
+
+    if (name.trim() == "" || email.trim() == "" || age.trim() == "" || contact.trim() == "") {
+        alert("Please fill in all the required fields.");
+    }else{
+        alert("Value submitted")
     }
 }
 
@@ -288,70 +301,66 @@ function quiz_submit(){
         alert("You have scored: "+score);
     }
 
-    var incorrect_string = "";
+    let incorrect_string = "";
 
     for (let i = 0; i <= states.length; i++) {
         switch(i){
             case 0:
                 if(states[0]!=true){
-                    incorrect_string+="You got question 1 wrong!<br>";
+                    incorrect_string+="\nYou got question 1 wrong!\n";
                 } 
                 break
 
             case 1:
                 if(states[1]!=true){
-                    incorrect_string+="You got question 2 wrong!<br>";
+                    incorrect_string+="\nYou got question 2 wrong!\n";
                 } 
                 break
 
             case 2:
                 if(states[2]!=true){
-                    incorrect_string+="You got question 3 wrong!<br>";
+                    incorrect_string+="\nYou got question 3 wrong!\n";
                 } 
                 break
                 
             case 3:
                 if(states[3]!=true){
-                    incorrect_string+="You got question 4 wrong!<br>";
+                    incorrect_string+="\nYou got question 4 wrong!\n";
                 } 
                 break
                 
             case 4:
                 if(states[4]!=true){
-                    incorrect_string+="You got question 5 wrong!<br>";
+                    incorrect_string+="\nYou got question 5 wrong!\n";
                 }
                 break
         }      
     }
-    if (incorrect_string!="")
-        document.getElementById("popupText").innerHTML = incorrect_string;
-    else
-        document.getElementById("popupText").innerHTML = "you got all the questions right!"
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-}
-
-// Show the popup with user details
-function showPopup() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var contact = document.getElementById("contact").value;
-
-    if (name.trim() == "" || email.trim() == "" || age.trim() == "" || contact.trim() == ""){
-        var popupText = "Ensure that you fill all the fields"
-    }else {
-        var popupText = "Name: " + name + "<br>Email: " + email + "<br>Age: " + age + "<br>Contact: " + contact;
+    if (incorrect_string===""){
+        alert("You got all the questions correct!")
+    } else{
+        alert(incorrect_string)
     }
-    document.getElementById("popupText").innerHTML = popupText;
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
 }
 
-// Close the popup
-function closePopup() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-
-    document.body.style.overflow = ""; // Enable scrolling
+function setName(){
+    let name = document.getElementById("introduction-text").innerHTML;
+    
 }
+
+
+// * XML AND HTML
+
+function ApplyColors() {
+    var navbar = document.getElementById("navbar");
+    var bgcolormenu = document.getElementById("navbar_color");
+    var textcol = document.getElementById("navbar_Textcolor");
+
+    var bgcolor = bgcolormenu.value;
+    var textcolor = textcol.value;
+    var body = document.body;
+    body.style.backgroundColor = bgcolor;
+    body.style.color = textcolor;
+}
+
+

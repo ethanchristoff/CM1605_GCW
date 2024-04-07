@@ -181,28 +181,46 @@ nav img{
     align-items: center; 
   }
   .footer div {
-  text-align: center;
+    text-align: center;
   }
-  .footer div h3 {
-  font-weight: 300;
-  margin-bottom: 15px; /* Adjust margin as needed */
-  letter-spacing: 1px;
+    .footer div h3 {
+    font-weight: 300;
+    margin-bottom: 15px; /* Adjust margin as needed */
+    letter-spacing: 1px;
   }
 
-  .col-1 a{
-  text-decoration: none;
-  display: block;
-  margin-bottom: 10;
+  .col-1 a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px; 
+    color: #000;
+    /* Transition for the border-bottom property */
+    transition: border-bottom 0.3s ease-in-out;
+    border-bottom: 2px solid transparent; /* Make border transparent initially */
   }
+  
+  .col-1 a:hover {
+    text-decoration: none; /* Ensure text-decoration is none */
+    border-bottom: 2px solid #000; /* Border becomes solid on hover */
+  }
+  
 
   .col-3 p{
     color: #000;
   }
 
   .col-3 a{
-    color: lightblue;
-    text-decoration: underline;
+    color: black;
+    text-decoration: none;
+    transition: border-bottom .3s ease-in-out;
+    border-bottom: 2px solid transparent;
   }
+  
+  .col-3 a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+  }
+  
   
   .footer_form input{
     width: 400px;
@@ -300,7 +318,7 @@ nav .fa{
     }
 }
 
-/*---hospital intro---*/
+/*--------------------------------------------hospital intro--------------------------------------------*/
 
 .hospital-intro{
     width: 80%;
@@ -315,7 +333,7 @@ h1{
 }
 
 p{
-    color: #777;
+    color: #000;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -353,7 +371,7 @@ h3{
     }
 }
 
-/*---Hospital locations segment---*/
+/*--------------------------------------------Hospital locations segment--------------------------------------------*/
 .hospital-locations{
     width: 80%;
     margin: auto;
