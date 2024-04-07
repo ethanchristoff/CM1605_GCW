@@ -189,63 +189,67 @@ h1 {
     background-color: transparent;
     transition: background-color .7s ease;
   }
-.footer {
+  .footer {
+    border-radius: 15px;
     margin-top: 30px;
-    padding: 30px; /* Adjust padding as needed */
+    padding: 30px; 
     background: lightblue;
     display: flex;
-    justify-content: space-around; /* Adjust alignment as needed */
-    align-items: center; /* Adjust alignment as needed */
-    max-width: auto;
-}
-#color
-
-.footer div {
+    justify-content: space-around; 
+    align-items: center; 
+  }
+  .footer div {
   text-align: center;
-}
-.footer div h3 {
+  }
+  .footer div h3 {
   font-weight: 300;
   margin-bottom: 15px; /* Adjust margin as needed */
   letter-spacing: 1px;
-}
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column; /* Stack footer contents vertically */
   }
-  .footer div {
-    margin-bottom: 20px; /* Add some space between stacked elements */
+  
+  @media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+  
+    .footer div{
+        margin-bottom: 20px;
+    }
   }
-}
-.col-1 a{
+  
+  .col-1 a{
   text-decoration: none;
   display: block;
   margin-bottom: 10;
-}
-form input{
-  width: 400px;
-  height: 45px;
-  border-radius: 20px;
-  text-align: center;
-  margin-top:1px;
-  margin-bottom: 15px;
-  outline: none;
-  border: none;
-}
-form button{
-  background: transparent;
-  border: 2px solid black;
-  color: black;
-  border-radius: 25px;
-  padding: 10px 30px;
-  font-size: 15px;
-  cursor: pointer;
-  align-items: center;
-}
-form button:hover{
-  background-color: #000;
-  color: #fff;
-}
-.stars {
+  }
+  
+  .footer_form input{
+    width: 400px;
+    height: 45px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top:1px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+  }
+  
+  .footer_form button{
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .7s ease;
+  }
+  
+  .footer_form button:hover{
+    background-color: #000;
+    color: #fff;
+  }
+  .stars {
   color: gold; /* Set the color of stars */
   font-size: 20px; /* Adjust the size of stars */
 }
