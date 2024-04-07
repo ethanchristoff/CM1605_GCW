@@ -170,69 +170,93 @@
             </div>
         </div>
 
-        <script>
-            let currentStep = 1;
-          
-            function nextStep(step) {
-              document.getElementById(`step${step}`).classList.remove('active');
-              currentStep = step + 1;
-              document.getElementById(`step${currentStep}`).classList.add('active');
-            }
-          
-            function previousStep(step) {
-              document.getElementById(`step${step}`).classList.remove('active');
-              currentStep = step - 1;
-              document.getElementById(`step${currentStep}`).classList.add('active');
-            }
 
-            function validateRegistration() {
-                const username = document.getElementById('username').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value.trim();
-                const confirm_password = document.getElementById('confirm_password').value.trim();
-
-                // Regular expression to match email format
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!username || !email || !password || !confirm_password) {
-                    alert('Please fill in all registration fields');
-                } else if (!emailPattern.test(email)) {
-                    alert('Please enter a valid email address');
-                } else if (password !== confirm_password){
-                    alert('Both the passwords should be same!');
-                } else if (password.length < 8){
-                    alert('Password must be at least 8 characters long!');
-                } else {
-                    alert(`Dear ${username}, thank you for signing up with us. The recommended results will be shown in a while.`);
-                    nextStep(1);
-                }
-            }
-            
-            function redirectToMainPage() {
-        
-                window.location.href = "../../Student 2/home_page.html";
-            }
-          </script>
-    </body>
     <footer class="footer">
         <div class="col-1">
             <h3>Links</h3>
-            <a href="../Gallery/Gallery_pg.html">Gallery</a>
+            <a href="Gallery_pg.html">Gallery</a>
             <a href="#">Products</a>
             <a href="#">Services</a>
             <a href="#">About us</a>
         </div>
         <div class="col-2">
             <h3>Newsletter</h3>
-            <form>
-                <input type="text" placeholder="Enter your email address here">
+            <form class="footer_form" id="newsletterForm">
+                <input type="text" aria-label="newsletter-name" placeholder="Enter your name here" name="name" id="name">
                 <br>
-                <button id="footer_button" type="submit">Subscribe now</button>
-            </form>
+                <input type="text" aria-label="newsletter-email" placeholder="Enter your email address here" name="email" id="email">
+                <br>
+                <button type="submit">Subscribe now</button>
+            </form>  
         </div>
         <div class="col-3">
             <h3>Contacts</h3>
             <p>&copy; This page was made by Mindiya De Zoysa, <br> visit his <a href="Student_1.html" target="_blank">editors page</a> to know more</p>
         </div>
     </footer>
+    </body>
+    <script>
+        let currentStep = 1;
+      
+        function nextStep(step) {
+          document.getElementById(`step${step}`).classList.remove('active');
+          currentStep = step + 1;
+          document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+      
+        function previousStep(step) {
+          document.getElementById(`step${step}`).classList.remove('active');
+          currentStep = step - 1;
+          document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+
+        function validateRegistration() {
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirm_password = document.getElementById('confirm_password').value.trim();
+
+            // Regular expression to match email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!username || !email || !password || !confirm_password) {
+                alert('Please fill in all registration fields');
+            } else if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address');
+            } else if (password !== confirm_password){
+                alert('Both the passwords should be same!');
+            } else if (password.length < 8){
+                alert('Password must be at least 8 characters long!');
+            } else {
+                alert(`Dear ${username}, thank you for signing up with us. The recommended results will be shown in a while.`);
+                nextStep(1);
+            }
+        }
+        
+        function redirectToMainPage() {
+    
+            window.location.href = "home_page.html";
+        }
+
+        // Attach an event handler for the 'submit' event on the newsletter form.
+        document.getElementById('newsletterForm').onsubmit = function(event) {
+            // Prevent the default form submission behavior.
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Define a regex pattern for basic email validation.
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Check if the name and email fields are filled and if the email is valid.
+            if(name && email && emailRegex.test(email)) {
+                alert(`Dear ${name}, you have successfully subscribed for our personalized newsletter.`);
+            } else {
+                alert('Please ensure all fields are filled out correctly.');
+            }
+        };
+
+      </script>
+    
 </html>

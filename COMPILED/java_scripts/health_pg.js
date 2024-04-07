@@ -25,21 +25,25 @@ function returnPrompt(element) {
     }
 }
 
-function feedback_required(){
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var age = document.getElementById("age").value;
-    var contact = document.getElementById("contact").value;
-    var feedback = document.getElementById("Feedback").value;
-    var rating = document.getElementById("rating").value;
+// Attach an event handler for the 'submit' event on the newsletter form.
+document.getElementById('newsletterForm').onsubmit = function(event) {
+    // Prevent the default form submission behavior.
+    event.preventDefault();
 
-    if (name.trim() == "" || email.trim() == "" || contact.trim() == "" || feedback.trim() == "" || rating == ""){
-        alert("Please fill in all the required fields");
-    }else if (isNaN(age.trim()) || age.trim() == "") {
-        alert("Please enter a valid age.");
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // Define a regex pattern for basic email validation.
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if the name and email fields are filled and if the email is valid.
+    if(name && email && emailRegex.test(email)) {
+        alert(`Dear ${name}, you have successfully subscribed for our personalized newsletter.`);
+    } else {
+        alert('Please ensure all fields are filled out correctly.');
     }
-    alert("Your name is: "+name+"\nYour email is:"+email+"\nYour age is:"+age+"\nYour contact details are:"+contact);
-}
+};
+
 
 // Navbar sticky function
 

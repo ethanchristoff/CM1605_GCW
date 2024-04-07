@@ -71,32 +71,6 @@
             </div>
         </div>
 
-        <script>
-            $(document).ready(function (){
-                $('.container.grid-col a').click(function(e){
-
-                    let href = e.target.parentElement.getAttribute('href');
-                    
-                    $('.tabcontent').each(function(index,element){
-                        if(`#${element.id}`!=href){
-                            $(element).removeClass('active');
-                        }
-                    })
-
-                    $('.container.blog-content span').click(function(){
-                        $(href).removeClass('active');
-                    })
-
-                    $(href).toggleClass('active');                  
-                    $('.tabcontent').css({
-                        height:"30rem"
-                    });
-
-                })
-            })
-        </script>
-
-    </body>
     <footer class="footer">
         <div class="col-1">
             <h3>Links</h3>
@@ -120,4 +94,48 @@
             <p>&copy; This page was made by Mindiya De Zoysa, <br> visit his <a href="Student_1.html" target="_blank">editors page</a> to know more</p>
         </div>
     </footer>
+    </body>
+    <script>
+        // Attach an event handler for the 'submit' event on the newsletter form.
+document.getElementById('newsletterForm').onsubmit = function(event) {
+    // Prevent the default form submission behavior.
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // Define a regex pattern for basic email validation.
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if the name and email fields are filled and if the email is valid.
+    if(name && email && emailRegex.test(email)) {
+        alert(`Dear ${name}, you have successfully subscribed for our personalized newsletter.`);
+    } else {
+        alert('Please ensure all fields are filled out correctly.');
+    }
+};
+$(document).ready(function (){
+$('.container.grid-col a').click(function(e){
+
+    let href = e.target.parentElement.getAttribute('href');
+    
+    $('.tabcontent').each(function(index,element){
+        if(`#${element.id}`!=href){
+            $(element).removeClass('active');
+        }
+    })
+
+    $('.container.blog-content span').click(function(){
+        $(href).removeClass('active');
+    })
+
+    $(href).toggleClass('active');                  
+    $('.tabcontent').css({
+        height:"30rem"
+    });
+
+})
+})
+</script>
+    
 </html>
