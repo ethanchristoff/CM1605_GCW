@@ -1,9 +1,7 @@
 * {
     font-family:'Times New Roman', Times, serif;
-}
-* {
-    font-family:'Times New Roman', Times, serif;
-}
+    font-weight: bold;
+  }
 
 nav ul {
     list-style-type: none;
@@ -126,7 +124,64 @@ h1 {
   display: inline-block;
 }
 
+.footer {
+  border-radius: 15px;
+  margin-top: 30px;
+  padding: 30px; 
+  background: lightblue;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
+.footer div {
+text-align: center;
+}
+.footer div h3 {
+font-weight: 300;
+margin-bottom: 15px; /* Adjust margin as needed */
+letter-spacing: 1px;
+}
 
+@media(max-width: 768px){
+  .footer{
+      flex-direction: column;
+  }
+
+  .footer div{
+      margin-bottom: 20px;
+  }
+}
+
+.col-1 a {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px; 
+  color: #000;
+  /* Transition for the border-bottom property */
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent; /* Make border transparent initially */
+}
+
+.col-1 a:hover {
+  text-decoration: none; /* Ensure text-decoration is none */
+  border-bottom: 2px solid #000; /* Border becomes solid on hover */
+}
+
+.col-3 a{
+  color: black;
+  text-decoration: none;
+  transition: border-bottom .3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.col-3 a:hover{
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+
+.col-3 p{
+  font-weight: normal;
+}
 
 
 .footerRectangle {
