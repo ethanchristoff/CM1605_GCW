@@ -1,0 +1,355 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+.registration, 
+.personal,
+.details {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background-color: lightblue; 
+    padding: 40px;
+    border-radius: 20px;
+    border: 7px solid rgb(4, 81, 136);
+    box-shadow: 4px 6px 2px rgb(0,0);
+
+
+}
+
+.navbar {
+    position: absolute;
+    margin-right: 60px;
+    top: 30px;
+    font-size: large;
+    right: 5px;
+    font-weight: bold;
+    font-style: italic; 
+}
+
+h2 {
+    margin: 0;
+    color: #000000;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password"],
+input[type="number"],
+input[type="text"],
+input[type="tel"],
+select {
+    text-align: left;
+}
+
+select {
+    width: 66%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.showPassword {
+    margin-top: 25px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    position: absolute;
+    right: 160px;
+}
+
+.input-with-unit {
+    position: relative;
+}
+
+.unit {
+    position: absolute;
+    right: 145px; 
+    top: 40%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.unit_level {
+    position: absolute;
+    right: 120px; 
+    top: 40%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+#go_on {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: maroon;
+    color: #fff;
+    cursor: pointer;
+}
+
+#go_on:hover {
+    background-color: #4CAF50;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: maroon;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #4CAF50;
+}
+
+#footer_link:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#footer_link:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#footer_link:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#footer_link:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 1;
+    padding: 1;
+    gap: 5rem;
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    border: 15px solid lightblue;
+    border-radius: 15px;
+}
+nav a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+nav a::before,
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color .7s ease;
+  }
+  
+nav a::before {
+    top: 0;
+    left: 0;
+  }
+  
+nav a::after {
+    bottom: 0;
+    right: 0;
+  }
+  
+nav a:hover::before,
+nav a:hover::after {
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+@keyframes enlarge {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px; 
+    height: 40px; 
+    margin: 20px; 
+}
+
+.logo:hover {
+    transform: scale(1.5);
+    animation: enlarge 0.5s infinite alternate;
+}
+
+.logoheader {
+    position: absolute;
+    margin-left: 65px;
+    top: 6px;
+    left: 1px;
+    font-weight: bold;
+    font-style: italic; 
+}
+
+.rectangle {
+    width: calc(100vw - 40px); 
+    height: calc(100vh - 40px);
+    margin: 1; 
+    border-radius: 15px;
+    border: 4px solid lightblue;
+    background-color: lightblue; 
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
+ }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a::before,
+.dropdown-content a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color .7s ease;
+}
+
+.signup_pg_rectangle {
+    width: 100%; 
+    height: 100%; 
+    margin: 1; 
+    border-radius: 15px;
+}
+
+.footer {
+    padding: 30px; 
+    background: lightblue;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+.footer div {
+    text-align: center;
+}
+
+.footer div h3 {
+    font-weight: 300;
+    margin-bottom: 15px; 
+    letter-spacing: 1px;
+}
+
+.col-1 a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10;
+}
+
+form input {
+    width: 400px;
+    height: 45px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top:1px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+}
+
+#footer_button {
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .7s ease;
+}
+
+#footer_button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+    }
+
+    .footer div{
+        margin-bottom: 20px;
+    }
+}

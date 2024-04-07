@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Signup Page</title>
+        <link rel="stylesheet" type="text/css" href="Signup.css">
+    </head>
+    <nav>
+        <h1 class="logoheader">Healthy Place</h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="../Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="#Home Page" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="../Gallery/Gallery_pg.html">Gallery</a>
+                    <a href="#Our Goal">Our Goal</a>
+                </div>
+            </li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="../../Student 2/quiz.html">Quiz</a></li>
+            <li><a href="#About us">About</a></li>
+
+            <div class="navbar"> 
+                <a href="Signup_pg.html"></i>Login</a>
+            </div>
+        </ul>
+        
+    </nav>
+    <body>
+        <div class="signup_pg_rectangle">
+            <div class="signup_pg">
+               
+		        <br>
+			
+		            <script>
+                	    var currentTime = new Date().getHours();
+                	    var greeting = "";
+
+                	    if (currentTime < 12) {
+                    		    greeting = "Good Morning";
+                	    } else if (currentTime < 15) {
+                    		    greeting = "Good Afternoon";
+               	 	    } else {
+                    		    greeting = "Good Evening";
+                	    }
+
+                	    document.write("<h2>" + greeting + ", Welcome to our Signup Page.</h2>");
+            	    </script>
+
+                <div id="step1" class="step active">
+
+		            <form class="registration" id="registrationForm">
+                        <fieldset class="Registor">
+
+                            <legend> Registor </legend>
+                        
+                            <label for="username">Username:</label>
+                	        <input type="text" id="username" name="username">
+
+                	        <label for="email">Email:</label>
+                	        <input type="email" id="email" name="email">
+	
+                	        <label for="password">Password:</label>
+                	        <input type="password" id="password" name="password" placeholder="Enter a password which has more than 8 characters.">
+                            <input type="checkbox" class="showPassword"> Show Password
+
+                            <label for="confirm_password">Confirm Password:</label>
+                	        <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter the same password.">
+                            <input type="checkbox" class="showPassword"> Show Password
+
+                            <script>
+                                const passwordFields = document.querySelectorAll('input[type="password"]');
+                                const showPasswordCheckboxes = document.querySelectorAll('.showPassword');
+                        
+                                showPasswordCheckboxes.forEach((checkbox, index) => {
+                                    checkbox.addEventListener("change", function() {
+                                        if (this.checked) {
+                                            passwordFields[index].type = "text";
+                                        } else {
+                                            passwordFields[index].type = "password";
+                                        }
+                                    });
+                                });
+                            </script>
+
+                        </fieldset>
+                        <br>
+                        <button id="go_on" type="button" onclick="validateRegistration()" onclick="nextStep(1)">Signup</button> 
+                        <br><br>
+                        <input type="reset" value="Reset">
+                    </form>
+                </div>
+
+                <div id="step2" class="step">
+          
+                    <form class="personal" id="personalForm"> 
+                        <fieldset class="Personal">
+
+                            <legend> Personal </legend>
+
+                            <label for="age">Age:</label>
+                	        <input type="number" id="age" name="age" pattern="[2-100]{3}" min="02" max="100" placeholder="Enter age (2-100)">
+
+                	        <label for="occupation">Occupation:</label>
+                	        <input type="text" id="occupation" name="occupation" >
+
+                	        <label for="telephone">Telephone:</label>
+                	        <input type="tel" id="telephone" name="telephone" pattern="\+\[0-9]{2} \[0-9]{2} \[0-9]{3} \[0-9]{4}" maxlength="15" placeholder="Enter in the format +94 76 253 8291">
+                    
+                	        <label for="gender">Gender:</label>
+                	        <select id="gender" name="gender">
+                    		        <option value="male">Male</option>
+                    		        <option value="female">Female</option>
+                	        </select>
+
+                        </fieldset>
+                        <br>
+                        <button id="go_on" type="button" onclick="nextStep(2)">Next</button> 
+                        <br><br>
+                        <input type="reset" value="Reset">
+                    </form>
+                </div>
+
+                <div id="step3" class="step">
+
+                    <form class="details" id="detailsForm">                   
+                        <fieldset class="Details">
+
+                            <legend> Details </legend>
+
+                            <label for="weight">Weight:</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="weight" pattern="[1-900]{3}" min="01" max="900" placeholder="Enter the weight in Kg.">
+                                <span class="unit">Kg</span>
+                            </div>
+                	    
+                            <label for="height">Height:</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="height" pattern="[1-500]{3}" min="01" max="500" placeholder="Enter the height in cm.">
+                                <span class="unit">cm</span>
+                            </div>
+                                 
+                	        <label for="bloodtype">Blood Type:</label>
+                	        <select id="bloodtype" name="bloodtype">
+                    		        <option value="A+">A+</option>
+                    		        <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                    		        <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                    		        <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                    		        <option value="O-">O-</option>
+                	        </select>
+
+                            <label for="sugar_level">Sugar Level:</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="sugar_level" pattern="[20-300]{3}" min="20" max="300" placeholder="Enter the sugar level in mg/dL.">
+                                <span class="unit_level">mg/dL</span>
+                            </div>
+
+                            <label for="cholesterol_level">Cholesterol Level:</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="cholesterol_level" pattern="[20-300]{3}" min="20" max="300" placeholder="Enter the cholesterol level in mg/dL.">
+                                <span class="unit_level">mg/dL</span>
+                            </div>
+
+                        </fieldset>
+                        <br>
+                        <button id="go_on" type="button" onclick="previousStep(3)">Previous</button> 
+                        <br><br>
+                        <button id="go_on" type="button" onclick="redirectToMainPage()">Complete</button> 
+                        <br><br>
+                        <input type="reset" value="Reset">
+            	    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let currentStep = 1;
+          
+            function nextStep(step) {
+              document.getElementById(`step${step}`).classList.remove('active');
+              currentStep = step + 1;
+              document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+          
+            function previousStep(step) {
+              document.getElementById(`step${step}`).classList.remove('active');
+              currentStep = step - 1;
+              document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+
+            function validateRegistration() {
+                const username = document.getElementById('username').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const confirm_password = document.getElementById('confirm_password').value.trim();
+
+                // Regular expression to match email format
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!username || !email || !password || !confirm_password) {
+                    alert('Please fill in all registration fields');
+                } else if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address');
+                } else if (password !== confirm_password){
+                    alert('Both the passwords should be same!');
+                } else if (password.length < 8){
+                    alert('Password must be at least 8 characters long!');
+                } else {
+                    alert(`Dear ${username}, thank you for signing up with us. The recommended results will be shown in a while.`);
+                    nextStep(1);
+                }
+            }
+            
+            function redirectToMainPage() {
+        
+                window.location.href = "../../Student 2/home_page.html";
+            }
+          </script>
+    </body>
+    <footer class="footer">
+        <div class="col-1">
+            <h3>Links</h3>
+            <a href="../Gallery/Gallery_pg.html">Gallery</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About us</a>
+        </div>
+        <div class="col-2">
+            <h3>Newsletter</h3>
+            <form>
+                <input type="text" placeholder="Enter your email address here">
+                <br>
+                <button id="footer_button" type="submit">Subscribe now</button>
+            </form>
+        </div>
+        <div class="col-3">
+            <h3>Contacts</h3>
+            <p>&copy; 2024 Healthy Place. All rights reserved.</p>
+            <p>This page was created by Student 1 in group C(1).</p>
+            <p>Mindiya De Zoysa.<a class="footer_link" href="../Page_Editor/PageEditor_pg.html" target="_blank">Click here</a> to visit to the page editor.</p>
+        </div>
+    </footer>
+</html>
