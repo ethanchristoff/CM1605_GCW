@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Healthy Quiz!</title>
+    <link rel="stylesheet" type="text/css" href="style_sheets/feedback.css">
+</head>
+<body class = "pagebackground">
+    <section clas="header"></section>
+ <nav>
+        <h1 class="logoheader"><a href="home_page.html">A Healthy Place</a></h1>
+        <ul>
+            <li><img alt="Health.com_logo" src="style_sheets/images/Health_Logo.png" alt="logo" class="logo"></li>
+            <li class="dropdown">
+                <a href="home_page.html" class="dropbtn">Home</a>
+                <div class="dropdown-content">
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Our Goal">Our Goal</a>
+                </div>
+            </li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#Contact Details">Contact</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#About us">About</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Background Color</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="changeBackgroundColor('#FFFFFF')">White</a>
+                    <a href="#" onclick="changeBackgroundColor('#964B00')">Brown</a>
+                    <a href="#" onclick="changeBackgroundColor('#000000')">Black</a>
+                    <a href="#" onclick="changeBackgroundColor('#FFD700')">Gold</a>
+                </div>
+            </li>
+            <!-- Text Color Dropdown -->
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Text Color</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="changeTextColor('#000000')">Black</a>
+                    <a href="#" onclick="changeTextColor('#008000')">Green</a>
+                    <a href="#" onclick="changeTextColor('#FF0000')">Red</a>
+                    <a href="#" onclick="changeTextColor('#0000FF')">Blue</a>
+                </div>
+            </li>
+            <li><a href="Signup_pg.html">Sign in</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Customer Feedback</h1>
+        <!-- Feedback items will be inserted here by the JavaScript function -->
+    </div>
+
+    <footer class="footer"> <!--Footer has designed by Student 4 (Chanul)-->
+        <div class="col-1">
+            <h3>Links</h3>
+            <a href="#">Gallery</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About us</a>
+        </div>
+        <div class="col-2">
+            <h3>Newsletter</h3>
+            <form class="footer_form" id="newsletterForm">
+                <input type="text" placeholder="Enter your name here" name="name" id="name">
+                <br>
+                <input type="text" placeholder="Enter your email address here" name="email" id="email">
+                <br>
+                <button type="submit">Subscribe now</button>
+            </form>            
+        </div>
+        <div class="col-3">
+            <h3>Contacts</h3>
+            <p>&copy; This page was made by Chanul Vitharan, <br> visit his <a href="#Student_4.html" target="_blank">editors page</a> to know more</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+loadFeedbacks();
+});
+
+function loadFeedbacks() {
+const xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState === 4 && this.status === 200) {
+    displayFeedbacks(this);
+}
+};
+xhttp.open("GET", "feedbacks.xml", true);
+xhttp.send();
+}
+
+function displayFeedbacks(xml) {
+const xmlDoc = xml.responseXML;
+const feedbackList = xmlDoc.getElementsByTagName("feedback");
+let htmlContent = "";
+for (let i = 0; i < feedbackList.length; i++) {
+const name = feedbackList[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+const comment = feedbackList[i].getElementsByTagName("comment")[0].childNodes[0].nodeValue;
+const rating = feedbackList[i].getElementsByTagName("rating")[0].childNodes[0].nodeValue;
+htmlContent += `<div class="feedback-item">
+                    <h3>${name}</h3>
+                    <p>${comment}</p>
+                    <p><strong>Rating:</strong> <span class="stars">${"&#9733;".repeat(rating)}</span></p>
+                </div>`;
+}
+document.querySelector(".container").innerHTML = htmlContent;
+}
+
+document.getElementById('newsletterForm').onsubmit = function(event) {
+    event.preventDefault(); // Prevent form submission to server for demonstration
+
+    // Get the values from the form
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // Basic email regex for validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Check if fields are filled and email is valid
+    if(name && email && emailRegex.test(email)) {
+        // Success, show personalized message
+        alert(`Dear ${name}, you have successfully subscribed for our personalized newsletter.`);
+    } else {
+        // Fail, show error message
+        alert('Please ensure all fields are filled out correctly.');
+    }
+};
+function changeBackgroundColor(color) {
+    document.body.style.backgroundColor = color;
+}
+
+function changeTextColor(color) {
+    document.body.style.color = color;
+}
+
+
+        
+
+</script>
+    
+</body>
+</html>
