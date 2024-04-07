@@ -18,14 +18,14 @@
                             <a href="home_page.html" class="dropbtn">HOME</a>
                             <div class="dropdown-content">
                                 <a href="#Gallery">Gallery</a>
-                                <a href="#about us">About Us</a>
+                                <a href="Aboutus.html">About Us</a>
                             </div>
                         </li>       
                         <li><a href="Product page.html">PRODUCTS</a></li>
                         <li><a href="#contact us">CONTACT US</a></li>
                         <li><a href="quiz.html">QUIZ</a></li>
                         <li><a href="#Sign in">SIGN IN</a></li>
-                        <li><a href="#about us">ABOUT US</a></li>
+                        <li><a href="Aboutus.html">ABOUT US</a></li>
                     </ul>
                 </div>
                 <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -33,7 +33,7 @@
             <div class="text-box">
                 <h1 id="introduction-text">An AI powered website</h1>
                 <p>One of the most sophisticated websites you can find for one of the safest places to be in..<br>Just leave your problems here, with us...</p>
-                <a href="#about us" class="home-main-btn">Click on me to know more about us</a>
+                <a href="Aboutus.html" class="home-main-btn">Click on me to know more about us</a>
             </div>
         </section>
         <section class="hospital-intro">
@@ -130,22 +130,23 @@
             <a href="#Contact us" class="home-main-btn">CONTACT US</a>
         </section>
         <section>
-            <footer class="footer">
+            <footer class="footer"> <!--Footer has designed by Student 4 (Chanul)-->
                 <div class="col-1">
                     <h3>Links</h3>
                     <a href="#">Gallery</a>
                     <a href="#">Products</a>
                     <a href="#">Services</a>
-                    <a href="form.html">Rate us</a>
+                    <a href="#">About us</a>
                 </div>
                 <div class="col-2">
                     <h3>Newsletter</h3>
-                    <form class="footer_form">
-                        <label for="email_newsletter"></label>
-                        <input type="text" placeholder="Enter your email address here" id="email_newsletter" name="email">
+                    <form class="footer_form" id="newsletterForm">
+                        <input type="text" aria-label="newsletter-name" placeholder="Enter your name here" name="name" id="name">
+                        <br>
+                        <input type="text" aria-label="newsletter-email" placeholder="Enter your email address here" name="email" id="email">
                         <br>
                         <button type="submit">Subscribe now</button>
-                    </form>
+                    </form>            
                 </div>
                 <div class="col-3">
                     <h3>Contacts</h3>

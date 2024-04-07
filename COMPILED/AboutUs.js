@@ -31,7 +31,7 @@ const studentDetails = {
 function updateStudentDetails(studentId) {
     const details = studentDetails[studentId];
     if (details) {
-        document.getElementById('student-image').src = `face.png`; // Set the correct image source
+        document.getElementById('student-image').src = `images/face.png`; // Set the correct image source
         document.getElementById('student-name').textContent = details.name;
         document.getElementById('student-id').textContent = `RGU ID: ${details.id}`;
         document.getElementById('student-role').textContent = `Student: ${details.role}`;
@@ -43,7 +43,7 @@ function updateStudentDetails(studentId) {
 // Function to reset right container to default view
 function resetRightContainer() {
     document.querySelector('.right').classList.remove('active');
-        document.getElementById('student-image').src = "AboutUs.png"; 
+        document.getElementById('student-image').src = "images/AboutUs.png"; 
         document.getElementById('student-name').textContent = "";
         document.getElementById('student-id').textContent = "";
         document.getElementById('student-role').textContent = "";
