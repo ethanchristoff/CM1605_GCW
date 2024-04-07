@@ -10,5 +10,10 @@
         <comment>Fast delivery and great communication.</comment>
         <rating>5</rating>
     </feedback>
+        <feedback>
+        <name>Jane Smith</name>
+        <comment>Fast delivery and great communication.</comment>
+        <rating>5</rating>
+    </feedback>
     <!-- Add more feedback entries here following the same structure -->
 </feedbacks>
