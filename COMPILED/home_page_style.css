@@ -318,7 +318,7 @@ nav .fa{
     }
 }
 
-/*---hospital intro---*/
+/*--------------------------------------------hospital intro--------------------------------------------*/
 
 .hospital-intro{
     width: 80%;
@@ -333,7 +333,7 @@ h1{
 }
 
 p{
-    color: #777;
+    color: #000;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -371,7 +371,7 @@ h3{
     }
 }
 
-/*---Hospital locations segment---*/
+/*--------------------------------------------Hospital locations segment--------------------------------------------*/
 .hospital-locations{
     width: 80%;
     margin: auto;
