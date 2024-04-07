@@ -1,27 +1,31 @@
 const studentDetails = {
     stu1: {
-        name: "Mindiya",
+        name: "Mindiya De Zoysa",
         id: "S1",
         role: "1",
-        email: "fgfdmindiyasgsfgs"
+        email: "m.agampodi@rgu.ac.uk",
+        image: "style_sheets/images/Student_1.jpeg"
     },
     stu2: {
         name: "Ethan Christoff Perera ",
         id: "2331419",
-        role: "22",
-        email: "fgfethandsgsfgs"
+        role: "2",
+        email: "e.modarage@rgu.ac.uk",
+        image: "style_sheets/images/Student_2.jpeg"
     },
     stu3: {
         name: "Chirath Shamika Setunge",
         id: "2330910",
         role: "3",
-        email: "fchirahtgfdsgsfgs"
+        email: "c.setunge-mudalige-don@rgu.ac.uk",
+        image: "style_sheets/images/Student_3.jpeg"
     },
     stu4: {
-        name: "Chanul",
-        id: "S4",
+        name: "Chanul Vitharana",
+        id: "2330948",
         role: "4",
-        email: "chanulgsfgs"
+        email: "c.vitharana@rgu.ac.uk",
+        image: "style_sheets/images/Student_4.jpeg"
     },
 
     // Add details for other students similarly
@@ -31,7 +35,7 @@ const studentDetails = {
 function updateStudentDetails(studentId) {
     const details = studentDetails[studentId];
     if (details) {
-        document.getElementById('student-image').src = `style_sheets/images/face.png`; // Set the correct image source
+        document.getElementById('student-image').src = details.image; // Set the correct image source
         document.getElementById('student-name').textContent = details.name;
         document.getElementById('student-id').textContent = `RGU ID: ${details.id}`;
         document.getElementById('student-role').textContent = `Student: ${details.role}`;
