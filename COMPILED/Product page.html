@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nested Class Example</title>
+    <title>Products</title>
     <link rel="stylesheet" href="Product page.css">
-    <nav id="navbar"> <!--Navigation bar has designed by Student 2 (Ethan)-->
+    <nav>
         <h1 class="logoheader"><a href="home_page.html">A Healthy Place</a></h1>
         <ul>
             <li><img alt="Health.com_logo" src="images/Health_Logo.png" alt="logo" class="logo"></li>
@@ -13,19 +13,17 @@
                 <a href="home_page.html" class="dropbtn">Home</a>
                 <div class="dropdown-content">
                     <a href="#Gallery">Gallery</a>
-                    <a href="#Our Goal">Our Goal</a>
+                    <a href="Aboutus.html">About us</a>
                 </div>
             </li>
             <li><a href="Product page.html">Products</a></li>
             <li><a href="#Contact Details">Contact</a></li>
             <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="#About us">About</a></li>
             <li><a href="#Sign in">Sign in</a></li>
         </ul>
     </nav>  
 </head>
 <body>
-
 <div class="main-container">
     <div class="left">
         <div class="top">
@@ -37,42 +35,42 @@
         </div>
         <div class="middle">
             <div class="item">
-                <img src="images/Oximeter.png" alt="product1" class="PImage" id="p1">
-                <h2 class="name">PRESSURE MONITOR</h2>
-                <div class="price">$200</div>
+                <img src="Oximeter.png" alt="product1" class="PImage" id="p1">
+                <h2 class="name">O<sub>2</sub> METER</h2>
+                <div class="price">￡60</div>
                 <div class="butns">
                     <div class="qty">QTY</div>
-                    <input type="number" class="counter" value="1" min="1">
+                    <input type="number" aria-label="Quantity" class="counter" value="1" min="1">
                     <button class="addCart">Add to Cart</button>
                 </div>
             </div>
             <div class="item">
-                <img src="images/thermo.png" alt="product1" class="PImage" id="p2">
+                <img src="thermo.png" alt="product2" class="PImage" id="p2">
                 <h2 class="name">THERMOMETER</h2>
-                <div class="price">$100</div>
+                <div class="price">￡30</div>
                 <div class="butns">
                     <div class="qty">QTY</div>
-                    <input type="number" class="counter" value="1" min="1">
+                    <input type="number" aria-label="Quantity" class="counter" value="1" min="1">
                     <button class="addCart">Add to Cart</button>
                 </div>
             </div>
             <div class="item">
-                <img src="images/bandage.png" alt="product1" class="PImage" id="p3">
+                <img src="bandage.png" alt="product3" class="PImage" id="p3">
                 <h2 class="name">3M BANDAGE</h2>
-                <div class="price">$50</div>
+                <div class="price">￡15</div>
                 <div class="butns">
                     <div class="qty">QTY</div>
-                    <input type="number" class="counter" value="1" min="1">
+                    <input type="number" aria-label="Quantity" class="counter" value="1" min="1">
                     <button class="addCart">Add to Cart</button>
                 </div>
             </div>
             <div id="last" class="item">
-                <img src="images/omron- blood pressure monitor.png" alt="product1" class="PImage">
+                <img src="omron- blood pressure monitor.png" alt="product4" class="PImage">
                 <h2 class="name">PRESSURE MONITOR</h2>
-                <div class="price">$200</div>
+                <div class="price">￡100</div>
                 <div class="butns">
                     <div class="qty">QTY</div>
-                    <input type="number" class="counter" value="1" min="1">
+                    <input type="number" aria-label="Quantity" class="counter" value="1" min="1">
                     <button class="addCart">Add to Cart</button>
                 </div>
             </div>          
@@ -86,7 +84,7 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="chirath.20230374@iit.ac.lk">
                     <label for="tel">Tel No:</label>
-                    <input type="text" id="tel" name="tel" placeholder="071-123-4567">
+                    <input type="tel" id="tel" name="tel" placeholder="071-123-4567">
                     <label for="address">Address:</label>
                     <textarea name="address" id="address" rows="3" cols="30" placeholder="No.123, ABCD Rd, XYZ"></textarea>
                 </fieldset>
@@ -117,9 +115,9 @@
             <p class="point-rule"> 1 point = 1% disocunt</p>
         </div>
         <div class="totalBox">
-            <div class="subtotal">Subtotal: $<span class="subtotal-amount">0.00</span></div>
-            <div class="discount-price">Discount: $<span class="discount-amount">0.00</span></div>
-            <div class="grand-total">Grand Total: $<span class="grand-total-amount">0.00</span></div>
+            <div class="subtotal">Subtotal: ￡<span class="subtotal-amount">0.00</span></div>
+            <div class="discount-price">Discount: ￡<span class="discount-amount">0.00</span></div>
+            <div class="grand-total">Grand Total: ￡<span class="grand-total-amount">0.00</span></div>
         </div>
         <div class="RBottom">
             <button class="clearOrder">Clear Order</button>
@@ -131,7 +129,7 @@
     <div class="popuptext" id="popupContent">
         <h3>Order Details</h3>
         <p id="popupMessage"></p>
-        <button id="okayButton">Okay</button>
+        <button class="okayButton" id="okayButton">Okay</button>
     </div>
 </div>
 
@@ -153,7 +151,7 @@
     </div>
     <div class="col-3">
         <h3>Contacts</h3>
-        <p>Address line blah blah<br> yada yada:........</p>
+        <p> &copy; This page was made by Chirath Setunge, <br> visit his <a href="Student_2.html" target="_blank">editors page</a> to know more</p>
     </div>
 </footer>
 <script src="Product page.js"></script>

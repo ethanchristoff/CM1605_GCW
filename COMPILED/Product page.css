@@ -1,6 +1,6 @@
 .main-container {
     display: flex; 
-    height: 780px; 
+    height: 750px; 
     max-width: 1400px;
     margin: 0 auto; 
     padding: 20px; 
@@ -20,6 +20,7 @@
     height: 60px;
     border-radius: 10px;
     background-color: rgb(4, 81, 136);
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2)
 }
 .left .top .title {
     text-align: left;
@@ -40,6 +41,7 @@
     transition: background-color 0.3s ease; 
     color: black;
     background-color: white;
+    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.2)
 }
 .left .top .scroll-btn:hover {
     background-color: lightblue;
@@ -51,6 +53,9 @@
     border-radius: 10px; 
     overflow-x: auto;
 }
+.middle {
+    scroll-behavior: smooth;
+}
 .left .middle .item {
     flex: 0 0 auto;
     text-align: center;
@@ -61,6 +66,7 @@
     outline: 10px solid lightblue;
     outline-offset: -10px;
     background-color: rgb(246, 240, 233);
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.1);
     
 }
 .left .middle .item .price {
@@ -84,6 +90,7 @@
     margin-left: 14px;
     color: antiquewhite;
     background-color: black;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2)
 
 }
 .left .middle .item .butns .counter {
@@ -94,7 +101,8 @@
     border: 1px solid black;
     border-radius: 20px;
     color: antiquewhite;
-    background-color: black;   
+    background-color: black;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2)   
 }
 .left .middle .item .butns .addCart {
     margin-left: auto;
@@ -104,11 +112,12 @@
     cursor: pointer;
     color: antiquewhite;
     background-color: black;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2)
    
 }
 .left .middle .item:hover {
     outline: 5px solid rgb(4, 81, 136);
-    outline-offset:0;
+    outline-offset:0px;
 }
 .left .middle .item img:hover {
     transform: scale(0.9);
@@ -129,24 +138,36 @@
 #p1 {
     max-width: 100%;
     max-height: 190px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     
 }
 .left .bottom {
     display: flex ;
+    flex-direction: row;
     flex: 1;
     padding: 10px;
     border-radius: 10px;
     background-color: lightblue;
+    box-shadow: 2px 6px 2px rgba(0, 0, 0, 0.1)
 }
-.personal-details, .card-details, .points-details {
+.personal-details, .card-details {
     flex: 1;
     margin: 0 10px;
 }
+@media (max-width: 768px) {
+    .left .bottom {
+        flex-direction: column;
+    }
+    .main-container {
+        height: auto;
+    }
+}
+
 fieldset {
     border: 4px solid  rgb(4, 81, 136);
     border-radius: 10px; 
     padding: 10px;
+    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.2)
 }
 
 legend {
@@ -183,6 +204,7 @@ legend {
     height: 60px;
     border-radius: 10px;
     background-color: rgb(4, 81, 136);
+    box-shadow: 4px 6px 2px rgba(0, 0, 0, 0.2)
 }
 .shopping-cart {
     text-align: left;
@@ -191,9 +213,10 @@ legend {
     color: white;  
 }
 .RMiddle {
-    width: 100%;
+    width: calc(100% - 10px);
     height: 700px;
     border-radius: 10px;
+    padding: 5px;
     background-color: lightblue;
     overflow-y: auto;
 }
@@ -204,6 +227,7 @@ legend {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    box-shadow: 2px 6px 1px rgba(0, 0, 0, 0.237);
 }
 
 .cart-item .name {
@@ -237,11 +261,13 @@ legend {
     color: #fff;
     border-radius: 20px;
     padding: 5px 10px;
+    box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.2)
 }
 
 /* Style for the minus button */
 .cart-item .minus {
     background-color: #dc3545;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2)
      /* Red color */
 }
 /* Style for the discount box */
@@ -249,9 +275,10 @@ legend {
     width: calc(100% - 20px);
     background-color: lightblue; /* Set background color to light blue */
     padding: 10px; /* Add padding for spacing */
-    border-radius: 20px; /* Set border radius */
+    border-radius: 10px; /* Set border radius */
     display: flex; /* Arrange elements in a row */
     align-items: center; /* Center items vertically */
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2)
 }
 
 /* Style for the points label */
@@ -262,25 +289,31 @@ legend {
 
 /* Style for the points input */
 .discountBox input.points-input {
-    background-color: black; /* Set background color to black */
+    background-color: black;
+    width: 40px; /* Set background color to black */
     color: white; /* Set text color to white */
     border: none; /* Remove border */
     border-radius: 10px; /* Set border radius */
     padding: 5px 10px; /* Add padding */
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2)
 }
 
 /* Style for the apply discount button */
 .discountBox .point-rule {
-    margin-left: auto; /* Push button to the right */
+    margin-left: auto;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; /* Push button to the right */
 }
 
 .totalBox {
     width: calc(100% - 20px);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
     background-color: rgb(4, 81, 136);
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2)
 }
 
 .totalBox > div {
@@ -315,7 +348,7 @@ legend {
     display: flex;
     width: 100%;
     height: 80px;
-    margin-top: auto;
+    margin-top: 0px;
     border-radius: 10px;
 }
 .RBottom button {
@@ -328,6 +361,7 @@ legend {
     transition: background-color 0.3s ease;
     color: white;
     background-color: black;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.2)
 }
 
 .RBottom button:hover {
@@ -446,23 +480,34 @@ nav a:hover::after{
     transition: background-color .7s ease;
 }
 
+
 /* The footer has design by student 4 (Chanul) credits goes to Chanul*/
 .footer {
     margin-top: 30px;
-    padding: 30px; 
+    padding: 30px; /* Adjust padding as needed */
     background: lightblue;
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-}
-.footer div {
+    justify-content: space-around; /* Adjust alignment as needed */
+    align-items: center; /* Adjust alignment as needed */
+    max-width: auto;
+  }
+  
+  .footer div {
   text-align: center;
-}
-.footer div h3 {
+  }
+  .footer div h3 {
   font-weight: 300;
-  margin-bottom: 15px; 
+  margin-bottom: 15px; /* Adjust margin as needed */
   letter-spacing: 1px;
-}
+  }
+  @media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack footer contents vertically */
+  }
+  .footer div {
+    margin-bottom: 20px; /* Add some space between stacked elements */
+  }
+  }
 .col-1 a{
   text-decoration: none;
   display: block;
@@ -495,16 +540,17 @@ form button:hover{
 
 .popup {
     position: relative;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
 }
 
 .popuptext {
     visibility: hidden;
     width: 400px;
-    height: 200px;
-    background-color: #555;
-    color: #fff;
+    height: 400px;
+    color: black;
+    background-color: rgb(246, 240, 233);
+    outline: 10px solid rgb(4, 81, 136);
     text-align: center;
     border-radius: 6px;
     padding: 8px 0;
@@ -514,7 +560,16 @@ form button:hover{
     left: 50%; /* Position from left */
     transform: translate(-50%, -50%); /* Center the popup */
 }
-
+.okayButton {
+    width: 60px;
+    margin-left: auto;
+    margin-right: 14px;
+    padding: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: antiquewhite;
+    background-color: black;
+}
 /* Toggle this class - show the popup */
 .popup.show .popuptext {
     visibility: visible;
@@ -524,6 +579,9 @@ form button:hover{
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+.blur {
+    filter: blur(4px); /* Adjust the blur intensity as needed */
 }
 
 
