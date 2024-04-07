@@ -89,3 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
     increaseBtn.addEventListener('click', increaseFontSize);
     decreaseBtn.addEventListener('click', decreaseFontSize);
 });
+
+            // Attach an event handler for the 'submit' event on the newsletter form.
+            document.getElementById('newsletterForm').onsubmit = function(event) {
+                // Prevent the default form submission behavior.
+                event.preventDefault();
+    
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+    
+                // Define a regex pattern for basic email validation.
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+                // Check if the name and email fields are filled and if the email is valid.
+                if(name && email && emailRegex.test(email)) {
+                    alert(`Dear ${name}, you have successfully subscribed for our personalized newsletter.`);
+                } else {
+                    alert('Please ensure all fields are filled out correctly.');
+                }
+            };
